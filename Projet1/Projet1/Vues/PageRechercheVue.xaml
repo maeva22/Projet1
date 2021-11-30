@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Projet1.Vues.PageRechercheVue"
+             Title="Recherche">
+    <ContentPage.Content>
+        <Grid>
+            <BoxView>
+                <BoxView.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="blue" Offset="0"/>
+                        <GradientStop Color="Red" Offset="1"/>
+                    </LinearGradientBrush>
+                </BoxView.Background>
+            </BoxView>
+            <StackLayout Margin="0,5,0,0">
+                <SearchBar Placeholder="Rechercher" 
+                            BackgroundColor="AliceBlue"/>
+            </StackLayout>
+            <StackLayout  HorizontalOptions="Center" Margin="0,70,0,0">
+                <Label Text="Pour plus d'information cliquez sur le professionel"
+                    TextColor="White" 
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"/>
+                <Label Text="Ou prenez directement rendez-vous "
+                    TextColor="White" 
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="Center" Margin="20,140,20,0">
+                <CollectionView ItemsSource="{Binding MaListeProfessionel}" VerticalOptions="Fill" 
+                                SelectedItems="{Binding SelectedProfessionel,Mode=OneWay}"
+                                SelectionMode="Multiple"
+                                SelectionChangedCommand ="{Binding SelectionChangedCommandProfessionel,Mode=OneWay}">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="1" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid RowDefinitions="110,5">
+                                <Frame BackgroundColor="#BF043055" HasShadow="False"  CornerRadius="10">
+                                    <Grid>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding Nom}"
+                                                   HorizontalOptions="Start" 
+                                                   TextColor="White" 
+                                                   FontAttributes="Bold"/>
+                                            <Label Text="{Binding Prenom}" 
+                                                   TextColor="White" 
+                                                   FontAttributes="Bold" 
+                                                   HorizontalOptions="Start" />
+                                        </StackLayout>
+                                        <Label Text="{Binding Formation}"
+                                               Grid.Row="1" 
+                                               Grid.Column="0" 
+                                               TextColor="White" 
+                                               FontAttributes="Bold"
+                                               HorizontalOptions="Start"/>
+
+                                        <!--<Button Text="Prendre Rendez-vous"  
+                                                Grid.RowSpan="3" 
+                                                Grid.Column="1" 
+                                                BackgroundColor="Blue"
+                                                TextColor="White"
+                                                WidthRequest="150"
+                                                HorizontalOptions="End" 
+                                                CornerRadius="23"
+                                                Command="{Binding BoutonPrendreRendezVous}"/>-->
+                                    </Grid>    
+                                </Frame>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

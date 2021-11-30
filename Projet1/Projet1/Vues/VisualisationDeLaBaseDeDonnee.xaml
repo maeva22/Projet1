@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Projet1.Vues.VisualisationDeLaBaseDeDonnee">
+    <ContentPage.Content>
+        <StackLayout>
+            <CollectionView x:Name="collectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Text="{Binding ID}"/>
+                            <Label Text="{Binding Nom}"/>
+                            <Label Text="{Binding Prenom}"/>
+                            <Label Text="{Binding Genre}"/>
+                            <Label Text="{Binding DateDeNaissance}"/>
+                            <Label Text="{Binding NumeroDeTelephone}"/>
+                            <Label Text="{Binding Email}"/>
+                            <Label Text="{Binding Password}"/>
+                            <Label Text="{Binding Formation}"/>
+                            <Label Text="{Binding Adresse}"/>
+                            <Label Text="{Binding CodePostale}"/>
+                            <Label Text="{Binding Ville}"/>
+                            <Label Text="{Binding Tarif}"/>
+                            <Label Text="{Binding Presentation}"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage> 
+                                   

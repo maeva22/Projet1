@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Projet1.Vues.PageMapVue"
+             Title="Map">
+
+    <ContentPage.Content>
+        <Grid>
+            <BoxView Grid.RowSpan="3">
+                <BoxView.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="blue" Offset="0"/>
+                        <GradientStop Color="Red" Offset="1"/>
+                    </LinearGradientBrush>
+                </BoxView.Background>
+            </BoxView>
+            <StackLayout  Margin="0,5,0,0">
+                <SearchBar Placeholder="Rechercher" 
+                            BackgroundColor="AliceBlue"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="Center" Margin="0,70,0,0">
+                <Label Text=" Page en cours de construction !"
+                       FontSize="56"/>
+            </StackLayout>
+            <StackLayout Grid.Row="2" HorizontalOptions="Center">
+                <Button Text="Retour" 
+                        BackgroundColor="Blue"
+                        TextColor="White"
+                        WidthRequest="250"
+                        HorizontalOptions="Center" 
+                        CornerRadius="23"
+                        Command="{Binding BoutonRetour}"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

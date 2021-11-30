@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Projet1.Vues.PageChoixUtilisateurVue">
+    <ContentPage.Content>
+        <Grid>
+            <BoxView Grid.RowSpan="3">
+                <BoxView.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="blue" Offset="0"/>
+                        <GradientStop Color="Red" Offset="1"/>
+                    </LinearGradientBrush>
+                </BoxView.Background>
+            </BoxView>
+            <StackLayout HorizontalOptions="Center" Spacing="30" Margin="0,40,0,0">
+                <Image  Source="index_doctor.png"
+                        WidthRequest="360"
+                        HeightRequest="276"/>
+            </StackLayout>
+            <StackLayout Grid.Row="1" HorizontalOptions="Center" Margin="40,120,40,0">
+                <Label Text="Vous pouvez vous inscrire en tant que porfessionel de la santé (Médecin généraliste, Dentiste, ...) ou tout simplement en tant que patient"
+                       TextColor="White"
+                       HorizontalTextAlignment="Center"
+                       FontSize="Medium"/>
+                
+            </StackLayout>
+            <StackLayout Grid.Row="2" HorizontalOptions="Center" Spacing="30" Margin="40,20,40,0">
+                <!--Spacing espace entre 2 -->
+                <Button Text="Professionel" 
+                    BackgroundColor="Blue"
+                    TextColor="White"
+                    WidthRequest="150"
+                    HeightRequest="46"
+                    CornerRadius="23"
+                    Command="{Binding CommandBoutonProfessionel}"/>
+                <Button Text="Patient" 
+                    BackgroundColor="Red"
+                    TextColor="White"
+                    WidthRequest="150"
+                    HeightRequest="46"
+                    CornerRadius="23"
+                    Command="{Binding CommandBoutonPatient}"/>
+            </StackLayout>
+        </Grid>
+        </ContentPage.Content>
+</ContentPage>

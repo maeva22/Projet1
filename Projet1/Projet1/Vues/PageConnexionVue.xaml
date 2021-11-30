@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Projet1.Vues.PageConnexionVue">
+  <ContentPage.Content>
+        <Grid>
+            <BoxView Grid.RowSpan="3">
+                <BoxView.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="blue" Offset="0"/>
+                        <GradientStop Color="Red" Offset="1"/>
+                    </LinearGradientBrush>
+                </BoxView.Background>
+            </BoxView>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="R"
+                        VerticalOptions="Start"
+                        BackgroundColor="#BF043055"
+                        TextColor="White"
+                        Command="{Binding CommandBoutonRetour}"
+                        CornerRadius="23"
+                        WidthRequest="50"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="Center" Spacing="15" Margin="0,60,0,0">
+                <Image  Source="index_doctor.png"
+                        WidthRequest="180"
+                        HeightRequest="138"/>
+            </StackLayout>
+            <StackLayout Grid.Row="1" HorizontalOptions="Center" Spacing="30" >
+                <Label Text="Connexion"  
+                        HorizontalOptions="Center"
+                        FontSize="Large"
+                        TextColor="White"/>
+                
+                <Frame BackgroundColor="#BF043055" HasShadow="False" CornerRadius="23" >
+                    <StackLayout Spacing="30">
+                        <Entry Placeholder="Email"
+                            Text="{Binding Login, Mode=TwoWay}"
+                            TextColor="White"
+                            PlaceholderColor="White"
+                            WidthRequest="275"
+                            MaxLength="30"
+                            Keyboard="Email"
+                            ClearButtonVisibility="WhileEditing"/>
+
+                        <Entry x:Name="TextPassword" Placeholder="Create Password"
+                            Text="{Binding Pwd, Mode=TwoWay}"
+                            TextColor="White"
+                            PlaceholderColor="White"
+                            WidthRequest="275"
+                            MaxLength="30"
+                            IsSpellCheckEnabled="false"
+                            IsTextPredictionEnabled="false"
+                            IsPassword="true"
+                            ClearButtonVisibility="WhileEditing"/>
+
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+            <StackLayout Grid.Row="2" HorizontalOptions="Center" Margin="0,50,0,0" Spacing="30" Orientation="Horizontal">
+                <!--Spacing espace entre 2 -->
+                <Button Text="Connexion" 
+                        BackgroundColor="Blue"
+                        TextColor="White"
+                        WidthRequest="150"
+                        VerticalOptions="Center"
+                        CornerRadius="23"
+                        />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

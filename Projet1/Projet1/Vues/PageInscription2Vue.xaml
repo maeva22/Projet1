@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Projet1.Vues.PageInscription2Vue">
+  <ContentPage.Content>
+        <Grid>
+            <BoxView Grid.RowSpan="3">
+                <BoxView.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="blue" Offset="0"/>
+                        <GradientStop Color="Red" Offset="1"/>
+                    </LinearGradientBrush>
+                </BoxView.Background>
+            </BoxView>
+            <StackLayout HorizontalOptions="Center" Spacing="15" Margin="0,40,0,0">
+                <Image  Source="index_doctor.png"
+                        WidthRequest="180"
+                        HeightRequest="138"/>
+                <Label Text="Bienvenue"  
+                        HorizontalOptions="Center"
+                        TextColor="White"/>
+                <ProgressBar Progress="0.70"
+                            ProgressColor="blue"/>
+            </StackLayout>
+            <StackLayout Grid.Row="1" HorizontalOptions="Center" Spacing="30" >
+                <Frame BackgroundColor="#BF043055" HasShadow="False" CornerRadius="23" >
+                    <StackLayout Spacing="30">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
+                            <CheckBox x:Name="FemmeEntry" IsChecked="True" Margin="1" />
+                            <Label Text="Femme"
+                                   FontSize="Medium"
+                                   TextColor="White"/>
+                            <CheckBox x:Name="HommeEntry" IsChecked="True" Margin="0" />
+                            <Label Text="Homme"
+                                   FontSize="Medium"
+                                   TextColor="White"/>
+                        </StackLayout>
+                        <Entry x:Name="NomEntry"
+                            Placeholder="Nom"
+                            TextColor="White"
+                            PlaceholderColor="White"
+                            WidthRequest="275"
+                            MaxLength="30"
+                            ClearButtonVisibility="WhileEditing"/>
+
+                        <Entry x:Name="PrenomEntry"
+                            Placeholder="Prenom"
+                            PlaceholderColor="White"
+                            TextColor="White"
+                            WidthRequest="275"
+                            MaxLength="30"
+                            ClearButtonVisibility="WhileEditing"/>
+             
+                    </StackLayout>
+                </Frame>
+                
+            </StackLayout>
+            <StackLayout Grid.Row="2" HorizontalOptions="Center" Margin="0,50,0,0" Spacing="30" Orientation="Horizontal">
+                <!--Spacing espace entre 2 -->
+                <Button Text="Retour" 
+                        BackgroundColor="Gray"
+                        WidthRequest="150"
+                        TextColor="White"
+                        VerticalOptions="Center"
+                        CornerRadius="23"
+                        Command="{Binding CommandBoutonRetour}"/>
+                <Button Text="Suivant" 
+                        BackgroundColor="Blue"
+                        WidthRequest="150"
+                        TextColor="White"
+                        VerticalOptions="Center"
+                        CornerRadius="23"
+                       />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

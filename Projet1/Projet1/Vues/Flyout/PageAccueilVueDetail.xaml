@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Projet1.Vues.Flyout.PageAccueilVueDetail"
+             Title="Accueil">
+    <ContentPage.Content>
+        <Grid>
+            <BoxView Grid.RowSpan="3">
+                <BoxView.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="blue" Offset="0"/>
+                        <GradientStop Color="Red" Offset="1"/>
+                    </LinearGradientBrush>
+                </BoxView.Background>
+            </BoxView>
+            <StackLayout  Margin="0,5,0,0">
+                <SearchBar Placeholder="Rechercher" 
+                            BackgroundColor="AliceBlue"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="Center" Margin="0,70,0,0">
+                <Button Text="Vous cherchez un professionel particulier ou dont vous connaisez le nom cliquez-ici !"  
+                        Image="map_picture.png"
+                        ContentLayout="top,5"
+                        TextColor="White"
+                        BackgroundColor="#BF043055"
+                        VerticalOptions="Center"
+                        HorizontalOptions="StartAndExpand"
+                        WidthRequest="325"
+                        Command="{Binding CommandBoutonProfession}"/>
+            </StackLayout>
+            <StackLayout Grid.Row="1" HorizontalOptions="Center" Margin="0,120,0,0">
+                <Button Text="Vous voulez rechercher un professionel dans un endroit spécifique cliquez-ici !"  
+                        Image="map_picture.png"
+                        ContentLayout="top,5"
+                        TextColor="White"
+                        BackgroundColor="#BF043055"
+                        VerticalOptions="Center"
+                        HorizontalOptions="StartAndExpand"
+                        WidthRequest="325"
+                        Command="{Binding CommandBoutonMap}"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
