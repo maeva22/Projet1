@@ -11,55 +11,54 @@ using Projet1.Vues;
 using System.ComponentModel;
 using Projet1.Modeles;
 using Projet1.Vues.Flyout;
+using System.Collections.ObjectModel;
 
 namespace Projet1.VueModeles
 {
     class PageConnexionVueModele :BaseVueModele
     {
         #region Attributs
-        private string email;
-        private string motdepasse;
-        
+        protected Page page;
+        private string _emailEntry;
+        private string _passwordEntry;
 
         #endregion
         #region Constructeur
-        public PageConnexionVueModele()
+        public PageConnexionVueModele(Page page)
         {
+            this.page = page;
             CommandBoutonRetour = new Command(ActionCommandBoutonRetour);
-
-            //CommandBoutonConnexion = new Command(ActionCommandBoutonConnexion);
-
-            CommandBoutonConnexion = new Command(OnSubmit);
+            CommandBoutonConnexionPatient = new Command(OnSubmit);
         }
         #endregion
 
         #region Getters/Setters
-        public string Email
+        public string EmailEntry
         {
             get 
             {
-                return email;
+                return _emailEntry;
             }  
             set
             {
-                SetProperty(ref email, value);
+                SetProperty(ref _emailEntry, value);
             }
         }
 
-        public string Motdepasse
+        public string PasswordEntry
         {
             get 
             { 
-                return motdepasse; 
+                return _passwordEntry; 
             }  
             set
             {
-                SetProperty(ref motdepasse, value);
+                SetProperty(ref _passwordEntry, value);
             }
         }
         public ICommand CommandBoutonRetour { get; }
 
-        public ICommand CommandBoutonConnexion { get; private set; }
+        public ICommand CommandBoutonConnexionPatient { get; private set; }
 
         #endregion
 
@@ -69,23 +68,22 @@ namespace Projet1.VueModeles
             Application.Current.MainPage = new IndexPageVue();
         }
 
-        public void OnSubmit()
+        public async void OnSubmit()
         {
-            /*if (TextEmail == _email && TextPassword == _password)
+            ObservableCollection<Patient> LesPastients = Patient.GetListSQLite();
+            foreach (Patient patient in LesPastients)
             {
-                Application.Current.MainPage = new PageAccueilVue();
+                if (EmailEntry == patient.Email && PasswordEntry == patient.Password)
+                {
+                    Patient.AjoutPatientConnecter(patient);
+                    Application.Current.MainPage = new PageAccueilVue();
+                }
+                else
+                {
+                    await page.DisplayAlert("Erreur", "Votre mot de passe ou votre email n'est pas bon !", "ok");
+                }
             }
-            else
-            {
-               
-            }*/
         }
-
-
-        /*public void ActionCommandBoutonConnexion()
-        {
-            Application.Current.MainPage = new PageInscription1Vue();
-        }*/
 
 
         #endregion

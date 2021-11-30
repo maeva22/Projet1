@@ -10,6 +10,8 @@ namespace Projet1.Modeles
     public class Patient : Utilisateur
     {
         #region Attributs
+        public static ObservableCollection<Patient> CollPatientConnecter = new ObservableCollection<Patient>();
+
         private int _id;
         #endregion
 
@@ -30,6 +32,19 @@ namespace Projet1.Modeles
         public static new ObservableCollection<Patient> GetListSQLite()
         {
             return App.Database.GetItemsAsync<Patient>();
+        }
+
+        public static ObservableCollection<Patient> GetPatientConnecter()
+        {
+            return Patient.CollPatientConnecter;
+        }
+        public static void AjoutPatientConnecter(Patient param)
+        {
+            Patient.CollPatientConnecter.Add(param);
+        }
+        public static void SuppresionPatientConnecter()
+        {
+            Patient.CollPatientConnecter.Clear();
         }
         #endregion
     }

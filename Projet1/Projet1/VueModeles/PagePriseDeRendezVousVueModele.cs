@@ -13,14 +13,21 @@ namespace Projet1.VueModeles
     {
         #region Attributs
         ObservableCollection<Professionel> _leProfessionel;
+        private DateTime _datePickerSelected;
+        private DateTime _minDate;
+        private DateTime _maxDate;
         #endregion
         #region Constructeurs
         public PagePriseDeRendezVousVueModele()
         {
+            // affiche le professionel
             ObservableCollection<Professionel> unProfessionel = Professionel.GetProfessionelChoisie();
             LeProfessionel = new ObservableCollection<Professionel>(unProfessionel);
 
             BoutonRetour = new Command(ActionCommandBoutonRetour);
+
+            DateTime dt = DateTime.Now;
+            DatePickerSelected = dt.AddDays(5);
         }
         #endregion
 
@@ -35,6 +42,39 @@ namespace Projet1.VueModeles
             {
                 SetProperty(ref _leProfessionel, value);
             }
+        }
+        public DateTime DatePickerSelected
+        {
+            get
+            {
+                return _datePickerSelected;
+            }
+            set
+            {
+                SetProperty(ref _datePickerSelected, value);
+            }
+        }
+        public DateTime MinDate
+        {
+            get
+            {
+                return _minDate;
+            }
+            set
+            {
+                SetProperty(ref _minDate, value);
+            }
+        }
+        public DateTime MaxDate
+        {
+            get
+            {
+                return _maxDate;
+            }
+            set
+            {
+                SetProperty(ref _maxDate, value);
+}
         }
         public ICommand BoutonRetour { get; }
         #endregion

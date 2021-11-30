@@ -8,6 +8,8 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Projet1.VueModeles;
 using System.Diagnostics;
+using System.Collections.ObjectModel;
+using Projet1.Modeles;
 
 namespace Projet1.Vues
 {
@@ -18,7 +20,7 @@ namespace Projet1.Vues
         public PageConnexionVue()
         { 
             InitializeComponent();
-            BindingContext = vueModele = new PageConnexionVueModele();
+            BindingContext = vueModele = new PageConnexionVueModele(this);
         }
     }
 }

@@ -34,25 +34,27 @@
                 
                 <Frame BackgroundColor="#BF043055" HasShadow="False" CornerRadius="23" >
                     <StackLayout Spacing="30">
-                        <Entry Placeholder="Email"
-                            Text="{Binding Login, Mode=TwoWay}"
-                            TextColor="White"
-                            PlaceholderColor="White"
-                            WidthRequest="275"
-                            MaxLength="30"
-                            Keyboard="Email"
-                            ClearButtonVisibility="WhileEditing"/>
+                        <Entry x:Name="EmailEntry"
+                               Text="{Binding EmailEntry}"
+                               Placeholder="Email"
+                               TextColor="White"
+                               PlaceholderColor="White"
+                               WidthRequest="275"
+                               MaxLength="30"
+                               Keyboard="Email"
+                               ClearButtonVisibility="WhileEditing"/>
 
-                        <Entry x:Name="TextPassword" Placeholder="Create Password"
-                            Text="{Binding Pwd, Mode=TwoWay}"
-                            TextColor="White"
-                            PlaceholderColor="White"
-                            WidthRequest="275"
-                            MaxLength="30"
-                            IsSpellCheckEnabled="false"
-                            IsTextPredictionEnabled="false"
-                            IsPassword="true"
-                            ClearButtonVisibility="WhileEditing"/>
+                        <Entry x:Name="PasswordEntry" 
+                               Text="{Binding PasswordEntry}"
+                               Placeholder="Create Password"
+                               TextColor="White"
+                               PlaceholderColor="White"
+                               WidthRequest="275"
+                               MaxLength="30"
+                               IsSpellCheckEnabled="false"
+                               IsTextPredictionEnabled="false"
+                               IsPassword="true"
+                               ClearButtonVisibility="WhileEditing"/>
 
                     </StackLayout>
                 </Frame>
@@ -65,6 +67,7 @@
                         WidthRequest="150"
                         VerticalOptions="Center"
                         CornerRadius="23"
+                        Command="{Binding CommandBoutonConnexionPatient}"
                         />
             </StackLayout>
         </Grid>
