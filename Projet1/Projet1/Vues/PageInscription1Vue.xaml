@@ -59,11 +59,15 @@
                             ClearButtonVisibility="WhileEditing"/>
 
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
-                            <CheckBox x:Name="FemmeEntry" IsChecked="True" Margin="1" />
+                            <CheckBox x:Name="FemmeEntry" 
+                                      IsChecked="False" 
+                                      Margin="1" />
                             <Label Text="Femme"
                                 FontSize="Medium"
                                 TextColor="White"/>
-                            <CheckBox x:Name="HommeEntry" IsChecked="True" Margin="0" />
+                            <CheckBox x:Name="HommeEntry" 
+                                      IsChecked="False" 
+                                      Margin="0" />
                             <Label Text="Homme"
                                 FontSize="Medium"
                                 TextColor="White"/>

@@ -47,7 +47,7 @@ namespace Projet1.Vues
                 if (ValidateEmail(EmailEntry.Text))
                 {
                         // faire en sorte que l'utilisateur puisse seulement cocher un genre et non 2 
-                        if (FemmeEntry.IsChecked == true && HommeEntry.IsChecked == true)
+                        if ((FemmeEntry.IsChecked == true && HommeEntry.IsChecked == true) || (FemmeEntry.IsChecked == false && HommeEntry.IsChecked == false))
                         {
                             await DisplayAlert("Erreur", "Vous ne pouvez pas avoir 2 genres de coché !", "ok");
                         }
