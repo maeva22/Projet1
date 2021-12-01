@@ -36,7 +36,7 @@ namespace Projet1.Vues.Flyout
                     new PageAccueilVueFlyoutMenuItem { Id = 0, Title = "Accueil",IconSource="icon_home.png",TargetType =typeof(PageAccueilVueDetail)},
                     new PageAccueilVueFlyoutMenuItem { Id = 1, Title = "Mon Compte",TargetType =typeof(PageConnexionVue) },
                     new PageAccueilVueFlyoutMenuItem { Id = 2, Title = "Mes Rendez-vous",TargetType =typeof(PageMapVue) },
-                    new PageAccueilVueFlyoutMenuItem { Id = 3, Title = "Déconnexion",TargetType =typeof(PageInscription1Vue) },
+                    new PageAccueilVueFlyoutMenuItem { Id = 3, Title = "Déconnexion",TargetType =typeof(PageAccueilVue) }
 
                 });
             }

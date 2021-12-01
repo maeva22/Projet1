@@ -89,7 +89,7 @@ namespace Projet1.Vues
                                     });
 
                                     await DisplayAlert("Bravo", "enregistrement reussi", "ok");
-                                    Application.Current.MainPage = new VisualisationDeLaBaseDeDonnee();
+                                    Application.Current.MainPage = new PageConnexionVue();
                                 }
                                 else
                                 {

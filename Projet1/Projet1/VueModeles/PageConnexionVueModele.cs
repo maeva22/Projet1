@@ -77,6 +77,7 @@ namespace Projet1.VueModeles
                 {
                     Patient.AjoutPatientConnecter(patient);
                     Application.Current.MainPage = new PageAccueilVue();
+                    await page.DisplayAlert("Bravo", "Vous êtes connecté!", "ok");
                 }
                 else
                 {
