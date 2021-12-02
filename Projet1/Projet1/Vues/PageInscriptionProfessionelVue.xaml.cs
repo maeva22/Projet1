@@ -2,6 +2,7 @@
 using Projet1.VueModeles;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -44,50 +45,63 @@ namespace Projet1.Vues
                 && !string.IsNullOrEmpty(PresentationEntry.Text))
             {
                 // vérifie que l'email saisie est correct
+                // vérifie que l'email saisie est correct
                 if (ValidateEmail(EmailEntry.Text))
                 {
-                        // faire en sorte que l'utilisateur puisse seulement cocher un genre et non 2 
-                        if ((FemmeEntry.IsChecked == true && HommeEntry.IsChecked == true) || (FemmeEntry.IsChecked == false && HommeEntry.IsChecked == false))
+                    // voir si l'email est déjà présent dans la collection
+                    ObservableCollection<Professionel> LesProfessionels = Professionel.GetListSQLite();
+                    foreach (Professionel professionel in LesProfessionels)
+                    {
+                        if (EmailEntry.Text != professionel.Email)
                         {
-                            await DisplayAlert("Erreur", "Vous ne pouvez pas avoir 2 genres de coché !", "ok");
-                        }
-                        else
-                        {
-                            if (PasswordEntry.Text == PasswordVerifyEntry.Text)
+                            // faire en sorte que l'utilisateur puisse seulement cocher un genre et non 2 
+                            if ((FemmeEntry.IsChecked == true && HommeEntry.IsChecked == true) || (FemmeEntry.IsChecked == false && HommeEntry.IsChecked == false))
                             {
-                                if (FemmeEntry.IsChecked == true)
-                                {
-                                    GenreChoice = "Femme";
-                                }
-                                else
-                                {
-                                    GenreChoice = "Homme";
-                                }
-                            await App.Database.SaveItemAsync(new Professionel
-                                {
-                                    Nom = NomEntry.Text,
-                                    Prenom = PrenomEntry.Text,
-                                    Genre = GenreChoice,
-                                    DateDeNaissance = DateEntry.Date,
-                                    NumeroTelephone = NumEntry.Text,
-                                    Email = EmailEntry.Text,
-                                    Password = PasswordEntry.Text,
-                                    Formation = FormationEntry.Text,
-                                    Adresse = AdresseEntry.Text,
-                                    CodePostale = CodePostaleEntry.Text,
-                                    Ville = VilleEntry.Text,
-                                    Tarif = TarifEntry.Text,    
-                                    Presentation=PresentationEntry.Text
-                                });
-
-                                await DisplayAlert("Bravo", "enregistrement reussi", "ok");
-                                Application.Current.MainPage = new PageConnexionVue();
+                                await DisplayAlert("Erreur", "Vous ne pouvez pas avoir 2 genres de coché !", "ok");
                             }
                             else
                             {
-                                await DisplayAlert("Erreur", "Vos mots de passes ne sont pas les mêmes", "ok");
+                                if (PasswordEntry.Text == PasswordVerifyEntry.Text)
+                                {
+                                    if (FemmeEntry.IsChecked == true)
+                                    {
+                                        GenreChoice = "Femme";
+                                    }
+                                    else
+                                    {
+                                        GenreChoice = "Homme";
+                                    }
+                                await App.Database.SaveItemAsync(new Professionel
+                                    {
+                                        Nom = NomEntry.Text,
+                                        Prenom = PrenomEntry.Text,
+                                        Genre = GenreChoice,
+                                        DateDeNaissance = DateEntry.Date,
+                                        NumeroTelephone = NumEntry.Text,
+                                        Email = EmailEntry.Text,
+                                        Password = PasswordEntry.Text,
+                                        Formation = FormationEntry.Text,
+                                        Adresse = AdresseEntry.Text,
+                                        CodePostale = CodePostaleEntry.Text,
+                                        Ville = VilleEntry.Text,
+                                        Tarif = TarifEntry.Text,    
+                                        Presentation=PresentationEntry.Text
+                                    });
+
+                                    await DisplayAlert("Bravo", "enregistrement reussi", "ok");
+                                    Application.Current.MainPage = new PageConnexionVue();
+                                }
+                                else
+                                {
+                                    await DisplayAlert("Erreur", "Vos mots de passes ne sont pas les mêmes", "ok");
+                                }
                             }
                         }
+                        else
+                        {
+                            await DisplayAlert("Erreur", "Cette adresse email est déjà existante! Vous avez peut-être déjà un compte ?", "ok");
+                        }
+                    }
                 }
                 else
                 {

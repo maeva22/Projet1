@@ -19,6 +19,7 @@ namespace Projet1.Vues
     public partial class PageInscription1Vue : ContentPage
     {
         PageInscription1VueModele vueModele;
+        
         public PageInscription1Vue()
         {
             InitializeComponent();
@@ -36,10 +37,6 @@ namespace Projet1.Vues
             return EmailRegex.IsMatch(email);
         }
 
-        /*public static bool IsPhoneNumber(string number)
-        {
-            return Regex.Match(number, @"^(\+[0-9]{9})$").Success;
-        }*/
         private string genreChoice;
         public string GenreChoice { get => genreChoice; set => genreChoice = value; }
 
@@ -54,11 +51,11 @@ namespace Projet1.Vues
                 if (ValidateEmail(EmailEntry.Text))
                 {
                     // voir si l'email est déjà présent dans la collection
-                    //if (Utilisateur.(EmailEntry.Text))
-                    //{
-                        // verifier que le numero de telephone est correct
-                        //if (IsPhoneNumber(NumEntry.Text))
-                        //{
+                    ObservableCollection<Patient> LesPastients = Patient.GetListSQLite();
+                    foreach (Patient patient in LesPastients)
+                    {
+                        if (EmailEntry.Text != patient.Email)
+                        {
                             // faire en sorte que l'utilisateur puisse seulement cocher un genre et non 2 
                             if ((FemmeEntry.IsChecked == true && HommeEntry.IsChecked == true) || (FemmeEntry.IsChecked == false && HommeEntry.IsChecked == false))
                             {
@@ -76,7 +73,7 @@ namespace Projet1.Vues
                                     {
                                         GenreChoice = "Homme";
                                     }
-                            await App.Database.SaveItemAsync(new Patient
+                                    await App.Database.SaveItemAsync(new Patient
                                     {
 
                                         Nom = NomEntry.Text,
@@ -96,16 +93,12 @@ namespace Projet1.Vues
                                     await DisplayAlert("Erreur", "Vos mots de passes ne sont pas les mêmes", "ok");
                                 }
                             }
-                       // }
-                        //else
-                        //{
-                            //await DisplayAlert("Erreur", "Votre numéro de téléphone n'est pas valide", "ok");
-                        //}
-                    /*}
-                    else
-                    {
-                        await DisplayAlert("Erreur", "Cette adresse email est déjà prise! Vous avez peut-être déjà un compte ?", "ok");
-                    }*/
+                        }
+                        else
+                        {
+                            await DisplayAlert("Erreur", "Cette adresse email est déjà existante! Vous avez peut-être déjà un compte ?", "ok");
+                        }
+                    }
                 }
                 else
                 {
