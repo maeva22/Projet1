@@ -28,3 +28,8 @@ C:\Xamarin\Projet1\Projet1\Projet1\obj\Debug\netstandard2.0\Vues\PageMapVue.xaml
 C:\Xamarin\Projet1\Projet1\Projet1\obj\Debug\netstandard2.0\Vues\PageRechercheVue.xaml.g.cs
 C:\Xamarin\Projet1\Projet1\Projet1\obj\Debug\netstandard2.0\Vues\PageInformationsProfessionelVue.xaml.g.cs
 C:\Xamarin\Projet1\Projet1\Projet1\obj\Debug\netstandard2.0\Vues\PagePriseDeRendezVousVue.xaml.g.cs
+C:\Xamarin\Projet1\Projet1\Projet1\obj\Debug\netstandard2.0\Calendrier\Controls\Calendar.xaml.g.cs
+C:\Xamarin\Projet1\Projet1\Projet1\obj\Debug\netstandard2.0\Calendrier\Controls\DayView.xaml.g.cs
+C:\Xamarin\Projet1\Projet1\Projet1\obj\Debug\netstandard2.0\Calendrier\Controls\DefaultFooterSection.xaml.g.cs
+C:\Xamarin\Projet1\Projet1\Projet1\obj\Debug\netstandard2.0\Calendrier\Controls\DefaultHeaderSection.xaml.g.cs
+C:\Xamarin\Projet1\Projet1\Projet1\obj\Debug\netstandard2.0\Vues\CalendarHeader.xaml.g.cs

@@ -14,6 +14,9 @@ namespace Projet1.Modeles
         private int _id;
         private DateTime _dateRendezVous;
         private int _idProfessionel;
+        private int _idPatient;
+        private int _idHoraire;
+
         #endregion
 
         #region Constructeurs
@@ -28,8 +31,11 @@ namespace Projet1.Modeles
         public int ID { get => _id; set => _id = value; }
         public DateTime DateRendezVous { get => _dateRendezVous; set => _dateRendezVous = value; }
         [ForeignKey(typeof(Professionel))]     // Specify the foreign key
-
         public int IDProfessionel { get => _idProfessionel; set => _idProfessionel = value; }
+        [ForeignKey(typeof(Patient))]     // Specify the foreign key
+        public int IDPatient { get => _idPatient; set => _idPatient = value; }
+        [ForeignKey(typeof(Horaire))]     // Specify the foreign key
+        public int IDHoraire { get => _idHoraire; set => _idHoraire = value; }
         #endregion
 
         #region Methodes

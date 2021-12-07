@@ -17,7 +17,7 @@ namespace Projet1.Vues
         public PagePriseDeRendezVousVue()
         {
             InitializeComponent();
-            BindingContext = vueModele = new PagePriseDeRendezVousVueModele();
+            BindingContext = vueModele = new PagePriseDeRendezVousVueModele(this);
         }
     }
 }

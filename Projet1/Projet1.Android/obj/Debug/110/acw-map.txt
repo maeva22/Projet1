@@ -4,6 +4,12 @@ projet1.droid.MainActivity;crc64e35d5f7249ac8224.MainActivity
 ImageCircle.Forms.Plugin.Droid.ImageCircleRenderer, ImageCircle.Forms.Plugin;crc6436929b8ad3b40f6f.ImageCircleRenderer
 ImageCircle.Forms.Plugin.Droid.ImageCircleRenderer;crc6436929b8ad3b40f6f.ImageCircleRenderer
 imagecircle.forms.plugin.droid.ImageCircleRenderer;crc6436929b8ad3b40f6f.ImageCircleRenderer
+Rg.Plugins.Popup.Droid.Renderers.PopupPageRenderer, Rg.Plugins.Popup;crc643dd37f507f3d9710.PopupPageRenderer
+Rg.Plugins.Popup.Droid.Renderers.PopupPageRenderer;crc643dd37f507f3d9710.PopupPageRenderer
+rg.plugins.popup.droid.renderers.PopupPageRenderer;crc643dd37f507f3d9710.PopupPageRenderer
+Rg.Plugins.Popup.Droid.Gestures.RgGestureDetectorListener, Rg.Plugins.Popup;crc64fdbeeba101bd56dc.RgGestureDetectorListener
+Rg.Plugins.Popup.Droid.Gestures.RgGestureDetectorListener;crc64fdbeeba101bd56dc.RgGestureDetectorListener
+rg.plugins.popup.droid.gestures.RgGestureDetectorListener;crc64fdbeeba101bd56dc.RgGestureDetectorListener
 AndroidX.Activity.IOnBackPressedDispatcherOwner, Xamarin.AndroidX.Activity;androidx.activity.OnBackPressedDispatcherOwner
 AndroidX.Activity.IOnBackPressedDispatcherOwner;androidx.activity.OnBackPressedDispatcherOwner
 androidx.activity.OnBackPressedDispatcherOwner;androidx.activity.OnBackPressedDispatcherOwner
@@ -2311,3 +2317,6 @@ com.google.android.material.animation.TransformationCallback;com.google.android.
 Google.Common.Util.Concurrent.IListenableFuture, Xamarin.Google.Guava.ListenableFuture;com.google.common.util.concurrent.ListenableFuture
 Google.Common.Util.Concurrent.IListenableFuture;com.google.common.util.concurrent.ListenableFuture
 com.google.common.util.concurrent.ListenableFuture;com.google.common.util.concurrent.ListenableFuture
+Xamarin.Plugin.Calendar.Android.SwipeAwareContainerRenderer, Xamarin.Plugin.Calendar;crc64ef2c1b6c62d0b349.SwipeAwareContainerRenderer
+Xamarin.Plugin.Calendar.Android.SwipeAwareContainerRenderer;crc64ef2c1b6c62d0b349.SwipeAwareContainerRenderer
+xamarin.plugin.calendar.android.SwipeAwareContainerRenderer;crc64ef2c1b6c62d0b349.SwipeAwareContainerRenderer

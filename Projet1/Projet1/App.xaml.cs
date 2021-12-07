@@ -14,6 +14,7 @@ namespace Projet1
     {
         static GestionDataBase database;
         public ObservableCollection<Professionel> listeProfessionel;
+        public ObservableCollection<Horaire> listeHoraire;
         public App()
         {
             InitializeComponent();
@@ -291,6 +292,24 @@ namespace Projet1
                 Tarif = "3.50",
                 Presentation = "Le praticien a une longue expérience en imagerie (IRM et scanner) dans les domaines de la neurologie, l’ophtalmologie et l’ORL, les pathologies rachidiennes et médullaires. " +
                 "Elle réalise ces explorations avec attention, adaptées au cas clinique du patient et le reçoit en consultation à l’issue de l’examen. "
+            });
+
+            // pour les horaires
+            await App.database.DeleteItemsAsync<Horaire>(); // efface tous les horaires dans la table 
+
+            listeHoraire = App.Database.GetItemsAsync<Horaire>();
+
+            if (listeHoraire.FirstOrDefault(cus => cus.Heuredébut == "9h00") == null) await Horaire.AjoutItemSqlite(new Horaire
+            {
+                Heuredébut  = "9h00"
+            });
+            if (listeHoraire.FirstOrDefault(cus => cus.Heuredébut == "9h30") == null) await Horaire.AjoutItemSqlite(new Horaire
+            {
+                Heuredébut = "9h30"
+            });
+            if (listeHoraire.FirstOrDefault(cus => cus.Heuredébut == "10h00") == null) await Horaire.AjoutItemSqlite(new Horaire
+            {
+                Heuredébut = "10h00"
             });
         }
     }

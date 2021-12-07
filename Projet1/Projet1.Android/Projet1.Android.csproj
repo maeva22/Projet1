@@ -61,6 +61,9 @@
     <PackageReference Include="NETStandard.Library">
       <Version>2.0.3</Version>
     </PackageReference>
+    <PackageReference Include="Rg.Plugins.Popup">
+      <Version>2.0.0.14</Version>
+    </PackageReference>
     <PackageReference Include="sqlite-net-pcl">
       <Version>1.8.116</Version>
     </PackageReference>
@@ -73,8 +76,11 @@
     <PackageReference Include="Xam.Plugins.Forms.ImageCircle">
       <Version>3.1.1.1-beta</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2125" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2244" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="Xamarin.Plugin.Calendar">
+      <Version>1.4.5304</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -82,6 +88,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\font-awesome-5-free-regular.otf" />
+    <AndroidAsset Include="Assets\font-awesome-5-free-solid.otf" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
@@ -106,6 +114,9 @@
     <Content Include="FlyoutPageNavigation.dll" />
     <AndroidResource Include="Resources\drawable\map_picture.png" />
     <AndroidResource Include="Resources\drawable\icon_home.png" />
+    <AndroidResource Include="Resources\drawable\baseline_calendar_today_24.xml" />
+    <AndroidResource Include="Resources\drawable\baseline_date_range_24.xml" />
+    <AndroidResource Include="Resources\drawable\baseline_event_24.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Projet1\Projet1.csproj">

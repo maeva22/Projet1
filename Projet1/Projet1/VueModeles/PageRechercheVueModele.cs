@@ -100,7 +100,7 @@ namespace Projet1.VueModeles
         public void ActionBoutonPrendreRendezVous()
         {
             Method();
-            Application.Current.MainPage = new PagePriseDeRendezVousVue();
+            Application.Current.MainPage = new NavigationPage(new PagePriseDeRendezVousVue());
         }
 
         #endregion

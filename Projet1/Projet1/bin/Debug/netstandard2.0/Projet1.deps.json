@@ -15,6 +15,7 @@
           "Xam.Plugins.Forms.ImageCircle": "3.1.1.1-beta",
           "Xamarin.Essentials": "1.7.0",
           "Xamarin.Forms": "5.0.0.2125",
+          "Xamarin.Plugin.Calendar": "1.4.5304",
           "sqlite-net-pcl": "1.8.116"
         },
         "runtime": {
@@ -612,6 +613,17 @@
             "fileVersion": "5.0.0.747"
           }
         }
+      },
+      "Xamarin.Plugin.Calendar/1.4.5304": {
+        "dependencies": {
+          "Xamarin.Forms": "5.0.0.2125"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Plugin.Calendar.dll": {
+            "assemblyVersion": "1.4.5304.0",
+            "fileVersion": "1.4.5304.0"
+          }
+        }
       }
     }
   },
@@ -977,6 +989,13 @@
       "sha512": "sha512-oP4eEx8SkEId/azXqzBpl9MA5kjn8izMoQImV3c/M4Q8NLSERWWNJkymrSylaIIO4l0zQIofYjwQoHmtaQ0dFQ==",
       "path": "xamarin.forms/5.0.0.2125",
       "hashPath": "xamarin.forms.5.0.0.2125.nupkg.sha512"
+    },
+    "Xamarin.Plugin.Calendar/1.4.5304": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XsPRz4Kp1m3zIcClrWqtZd/tVETNQ7xXY/kEWTCPtd3SpOSIxV4TUD+xxJSm6MBwicoKc9TMad55/wUYDoE1aQ==",
+      "path": "xamarin.plugin.calendar/1.4.5304",
+      "hashPath": "xamarin.plugin.calendar.1.4.5304.nupkg.sha512"
     }
   }
 }

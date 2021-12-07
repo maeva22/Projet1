@@ -27,6 +27,7 @@
                     FontAttributes="Bold"
                     HorizontalOptions="Center"/>
             </StackLayout>
+            
             <StackLayout HorizontalOptions="Center" Margin="20,140,20,0">
                 <CollectionView ItemsSource="{Binding MaListeProfessionel}" VerticalOptions="Fill" 
                                 SelectedItems="{Binding SelectedProfessionel,Mode=OneWay}"
@@ -56,16 +57,6 @@
                                                TextColor="White" 
                                                FontAttributes="Bold"
                                                HorizontalOptions="Start"/>
-
-                                        <!--<Button Text="Prendre Rendez-vous"  
-                                                Grid.RowSpan="3" 
-                                                Grid.Column="1" 
-                                                BackgroundColor="Blue"
-                                                TextColor="White"
-                                                WidthRequest="150"
-                                                HorizontalOptions="End" 
-                                                CornerRadius="23"
-                                                Command="{Binding BoutonPrendreRendezVous}"/>-->
                                     </Grid>    
                                 </Frame>
                             </Grid>

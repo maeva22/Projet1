@@ -1,7 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Projet1.Vues.PagePriseDeRendezVousVue">
+             x:Class="Projet1.Vues.PagePriseDeRendezVousVue"
+             xmlns:controls="clr-namespace:Projet1.Vues"
+             xmlns:local="clr-namespace:Projet1.VueModeles"
+             xmlns:plugin="clr-namespace:Projet1.Calendrier.Controls;assembly=Projet1">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid>
             <BoxView>
@@ -35,25 +41,54 @@
                     </CollectionView.ItemsLayout>
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <Grid RowDefinitions="100,5">
+                            <Grid RowDefinitions="600,5">
                                 <Frame BackgroundColor="#BF043055" HasShadow="False"  CornerRadius="10">
                                     <Grid>
-                                        <StackLayout Orientation="Horizontal">
-                                            <Label Text="{Binding Nom}"
-                                                   HorizontalOptions="Start" 
-                                                   TextColor="White" 
-                                                   FontAttributes="Bold"/>
-                                            <Label Text="{Binding Prenom}" 
-                                                   TextColor="White" 
-                                                   FontAttributes="Bold" 
-                                                   HorizontalOptions="Start" />
-                                        </StackLayout>
+                                        <plugin:Calendar
+                                                CalendarLayout="Week"
+                                                BackgroundColor="#BF043055"
+                                                ShownDate="{Binding ShownDate}"
+                                                SelectedDate="{Binding SelectedDate}"
+                                                Padding="10,0"
+                                                HorizontalOptions="FillAndExpand"
+                                                VerticalOptions="FillAndExpand">
+                                            <plugin:Calendar.HeaderSectionTemplate>
+                                                <controls:CalendarHeader/>
+                                            </plugin:Calendar.HeaderSectionTemplate>
+                                        </plugin:Calendar>
                                     </Grid>
                                 </Frame>
                             </Grid>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
+                <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                    <CollectionView ItemsSource="{Binding MaListeHoraire}" VerticalOptions="Fill" 
+                            SelectedItems="{Binding SelectedHoraire,Mode=OneWay}"
+                            SelectionMode="Multiple"
+                            SelectionChangedCommand ="{Binding SelectionChangedCommandHoraire,Mode=OneWay}">
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout Orientation="Vertical" Span="3" VerticalItemSpacing="30" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid RowDefinitions="60, 5, 5">
+                                    <Frame BackgroundColor="Blue" HasShadow="False"  CornerRadius="10">
+                                        <Grid>
+                                            <StackLayout>
+                                                <Label Text="{Binding Heuredébut}"
+                                                    HorizontalOptions="Start" 
+                                                    TextColor="White" 
+                                                    FontAttributes="Bold"
+                                                    HorizontalTextAlignment="Center"/>
+                                            </StackLayout>
+                                        </Grid>
+                                    </Frame>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
             </StackLayout>
             <StackLayout HorizontalOptions="Center" Margin="20,700,20,0">
                 <Button Text="Retour" 

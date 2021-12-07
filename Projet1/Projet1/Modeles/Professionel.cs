@@ -1,4 +1,5 @@
 ﻿using SQLite;
+using SQLiteNetExtensions.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -20,6 +21,7 @@ namespace Projet1.Modeles
         private string _ville;
         private string _tarif;
         private string _presentation;
+        private  ObservableCollection<Professionel> _maCollHoraire ;
         #endregion
 
         #region Constructeurs
@@ -37,6 +39,10 @@ namespace Projet1.Modeles
         public string Ville { get => _ville; set => _ville = value; }
         public string Tarif { get => _tarif; set => _tarif = value; }
         public string Presentation { get => _presentation; set => _presentation = value; }
+
+        [OneToMany(CascadeOperations = CascadeOperation.All)]
+        public ObservableCollection<Professionel> MaCollHoraire { get => _maCollHoraire; set => _maCollHoraire = value; }
+
         #endregion
 
         #region Methodes
@@ -50,6 +56,8 @@ namespace Projet1.Modeles
             return param;
 
         }
+
+        // CollClasse du professionel selectionne par l'utilisateur 
         public static ObservableCollection<Professionel> GetProfessionelChoisie()
         {
             return Professionel.CollProfessionelChoisie;

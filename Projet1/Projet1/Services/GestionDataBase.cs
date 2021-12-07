@@ -36,8 +36,7 @@ namespace Projet1.Services
             if (!initialized)// la base de donnée existe ??
             {
                 //permet de créer la table Etudiant
-                //code a dupliqué par nb de table existante
-
+                //code a dupliqué par nb de table existante             
                 if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(Professionel).Name))
                 {
 
@@ -54,6 +53,12 @@ namespace Projet1.Services
                 {
 
                     await Database.CreateTablesAsync(CreateFlags.None, typeof(Utilisateur)).ConfigureAwait(false);
+
+                }
+                if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(Horaire).Name))
+                {
+
+                    await Database.CreateTablesAsync(CreateFlags.None, typeof(Horaire)).ConfigureAwait(false);
 
                 }
                 if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(Rendez_vous).Name))

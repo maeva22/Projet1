@@ -45,7 +45,7 @@ namespace Projet1.VueModeles
         #region Methodes
         public void ActionBoutonPrendreRendezVous()
         {
-            Application.Current.MainPage = new PagePriseDeRendezVousVue();
+            Application.Current.MainPage = new NavigationPage(new PagePriseDeRendezVousVue());
         }
         public void ActionCommandBoutonRetour()
         {
