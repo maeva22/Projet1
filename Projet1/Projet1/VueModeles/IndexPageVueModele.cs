@@ -9,7 +9,7 @@ using Projet1.Vues.Flyout;
 
 namespace Projet1.VueModeles
 {
-    class IndexPageVueModele : BaseVueModele
+    public class IndexPageVueModele : BaseVueModele
     {
         #region Attributs
         #endregion
@@ -21,14 +21,14 @@ namespace Projet1.VueModeles
 
             CommandBoutonConnexion = new Command(ActionCommandBoutonConnexion);
 
-            CommandBoutonContinuer = new Command(ActionCommandBoutonContinuer);
+            //CommandBoutonContinuer = new Command(ActionCommandBoutonContinuer);
         }
         #endregion
 
         #region Getters/Setters
         public ICommand CommandBoutonInscription { get; }
         public ICommand CommandBoutonConnexion { get; }
-        public ICommand CommandBoutonContinuer { get; }
+        //public ICommand CommandBoutonContinuer { get; }
         #endregion
 
         #region Methodes
@@ -42,10 +42,10 @@ namespace Projet1.VueModeles
             Application.Current.MainPage = new PageConnexionVue();
         }
 
-        public void ActionCommandBoutonContinuer()
+        /*public void ActionCommandBoutonContinuer()
         {
             Application.Current.MainPage = new PageAccueilVue();
-        }
+        }*/
         #endregion
     }
 }

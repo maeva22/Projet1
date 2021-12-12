@@ -7,7 +7,7 @@ using Xamarin.Forms;
 
 namespace Projet1.VueModeles
 {
-    class PageChoixUtilisateurVueModele : BaseVueModele
+    public class PageChoixUtilisateurVueModele : BaseVueModele
     {
         #region Attributs
         #endregion
@@ -15,27 +15,27 @@ namespace Projet1.VueModeles
         #region Constructeurs
         public PageChoixUtilisateurVueModele()
         {
-            CommandBoutonProfessionel = new Command(ActionCommandBoutonProfessionel);
+            CommandBoutonProfessionnel = new Command(ActionCommandBoutonProfessionnel);
 
             CommandBoutonPatient = new Command(ActionCommandBoutonPatient);
         }
         #endregion
 
         #region Getters/Setters
-        public ICommand CommandBoutonProfessionel { get; }
+        public ICommand CommandBoutonProfessionnel { get; }
 
         public ICommand CommandBoutonPatient { get; }
         #endregion
 
         #region Methodes
-        public void ActionCommandBoutonProfessionel()
+        public void ActionCommandBoutonProfessionnel()
         {
-            Application.Current.MainPage = new PageInscriptionProfessionelVue();
+            Application.Current.MainPage = new PageInscriptionProfessionnelVue();
         }
 
         public void ActionCommandBoutonPatient()
         {
-            Application.Current.MainPage = new PageInscription1Vue();
+            Application.Current.MainPage = new PageInscriptionPatientVue();
         }
         #endregion
     }

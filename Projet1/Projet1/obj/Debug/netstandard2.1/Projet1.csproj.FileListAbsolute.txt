@@ -13,11 +13,6 @@ C:\Xamarin\Projet1\Projet1\Projet1\obj\Debug\netstandard2.1\Vues\Flyout\PageAccu
 C:\Xamarin\Projet1\Projet1\Projet1\obj\Debug\netstandard2.1\Vues\IndexPageVue.xaml.g.cs
 C:\Xamarin\Projet1\Projet1\Projet1\obj\Debug\netstandard2.1\Vues\PageChoixUtilisateurVue.xaml.g.cs
 C:\Xamarin\Projet1\Projet1\Projet1\obj\Debug\netstandard2.1\Vues\PageConnexionVue.xaml.g.cs
-C:\Xamarin\Projet1\Projet1\Projet1\obj\Debug\netstandard2.1\Vues\PageInformationsProfessionelVue.xaml.g.cs
-C:\Xamarin\Projet1\Projet1\Projet1\obj\Debug\netstandard2.1\Vues\PageInscription1Vue.xaml.g.cs
-C:\Xamarin\Projet1\Projet1\Projet1\obj\Debug\netstandard2.1\Vues\PageInscription2Vue.xaml.g.cs
-C:\Xamarin\Projet1\Projet1\Projet1\obj\Debug\netstandard2.1\Vues\PageInscription3Vue.xaml.g.cs
-C:\Xamarin\Projet1\Projet1\Projet1\obj\Debug\netstandard2.1\Vues\PageInscriptionProfessionelVue.xaml.g.cs
 C:\Xamarin\Projet1\Projet1\Projet1\obj\Debug\netstandard2.1\Vues\PageMapVue.xaml.g.cs
 C:\Xamarin\Projet1\Projet1\Projet1\obj\Debug\netstandard2.1\Vues\PagePriseDeRendezVousVue.xaml.g.cs
 C:\Xamarin\Projet1\Projet1\Projet1\obj\Debug\netstandard2.1\Vues\PageRechercheVue.xaml.g.cs
@@ -33,3 +28,8 @@ C:\Xamarin\Projet1\Projet1\Projet1\obj\Debug\netstandard2.1\XamlC.stamp
 C:\Xamarin\Projet1\Projet1\Projet1\obj\Debug\netstandard2.1\Projet1.dll
 C:\Xamarin\Projet1\Projet1\Projet1\obj\Debug\netstandard2.1\ref\Projet1.dll
 C:\Xamarin\Projet1\Projet1\Projet1\obj\Debug\netstandard2.1\Projet1.pdb
+C:\Xamarin\Projet1\Projet1\Projet1\obj\Debug\netstandard2.1\Vues\PageDeconnexionVue.xaml.g.cs
+C:\Xamarin\Projet1\Projet1\Projet1\obj\Debug\netstandard2.1\Vues\PageInformationsProfessionnelVue.xaml.g.cs
+C:\Xamarin\Projet1\Projet1\Projet1\obj\Debug\netstandard2.1\Vues\PageInscriptionPatientVue.xaml.g.cs
+C:\Xamarin\Projet1\Projet1\Projet1\obj\Debug\netstandard2.1\Vues\PageInscriptionProfessionnelVue.xaml.g.cs
+C:\Xamarin\Projet1\Projet1\Projet1\obj\Debug\netstandard2.1\Vues\PageMonCompteVue.xaml.g.cs

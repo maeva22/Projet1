@@ -776,18 +776,6 @@
           "buildTransitive/Xamarin.Forms.props": {},
           "buildTransitive/Xamarin.Forms.targets": {}
         }
-      },
-      "Xamarin.Plugin.Calendar/1.4.5304": {
-        "type": "package",
-        "dependencies": {
-          "Xamarin.Forms": "4.8.0.1687"
-        },
-        "compile": {
-          "lib/netstandard2.0/Xamarin.Plugin.Calendar.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Xamarin.Plugin.Calendar.dll": {}
-        }
       }
     }
   },
@@ -3516,26 +3504,6 @@
         "xamarin.forms.5.0.0.2244.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
-    },
-    "Xamarin.Plugin.Calendar/1.4.5304": {
-      "sha512": "XsPRz4Kp1m3zIcClrWqtZd/tVETNQ7xXY/kEWTCPtd3SpOSIxV4TUD+xxJSm6MBwicoKc9TMad55/wUYDoE1aQ==",
-      "type": "package",
-      "path": "xamarin.plugin.calendar/1.4.5304",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/monoandroid10.0/Xamarin.Plugin.Calendar.dll",
-        "lib/monoandroid10.0/Xamarin.Plugin.Calendar.pdb",
-        "lib/monoandroid10.0/Xamarin.Plugin.Calendar.xml",
-        "lib/netstandard2.0/Xamarin.Plugin.Calendar.dll",
-        "lib/netstandard2.0/Xamarin.Plugin.Calendar.pdb",
-        "lib/netstandard2.0/Xamarin.Plugin.Calendar.xml",
-        "lib/xamarinios10/Xamarin.Plugin.Calendar.dll",
-        "lib/xamarinios10/Xamarin.Plugin.Calendar.pdb",
-        "lib/xamarinios10/Xamarin.Plugin.Calendar.xml",
-        "xamarin.plugin.calendar.1.4.5304.nupkg.sha512",
-        "xamarin.plugin.calendar.nuspec"
-      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -3546,7 +3514,6 @@
       "Xam.Plugins.Forms.ImageCircle >= 3.1.1.1-beta",
       "Xamarin.Essentials >= 1.7.0",
       "Xamarin.Forms >= 5.0.0.2244",
-      "Xamarin.Plugin.Calendar >= 1.4.5304",
       "sqlite-net-pcl >= 1.8.116"
     ]
   },
@@ -3617,10 +3584,6 @@
           "Xamarin.Forms": {
             "target": "Package",
             "version": "[5.0.0.2244, )"
-          },
-          "Xamarin.Plugin.Calendar": {
-            "target": "Package",
-            "version": "[1.4.5304, )"
           },
           "sqlite-net-pcl": {
             "target": "Package",

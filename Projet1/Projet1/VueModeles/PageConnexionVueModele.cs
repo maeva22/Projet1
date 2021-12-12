@@ -15,7 +15,7 @@ using System.Collections.ObjectModel;
 
 namespace Projet1.VueModeles
 {
-    class PageConnexionVueModele :BaseVueModele
+    public class PageConnexionVueModele :BaseVueModele
     {
         #region Attributs
         protected Page page;
@@ -68,24 +68,38 @@ namespace Projet1.VueModeles
             Application.Current.MainPage = new IndexPageVue();
         }
 
+        // méthode permettant à un utilisateur de se connecter
         public async void OnSubmit()
         {
-            ObservableCollection<Patient> LesPastients = Patient.GetListSQLite();
-            foreach (Patient patient in LesPastients)
+            NewEmailOrNot();
+            if (Patient.CollPatientConnecter.Count == 1 )
             {
-                if (EmailEntry == patient.Email && PasswordEntry == patient.Password)
+                Application.Current.MainPage = new PageAccueilVue();
+                await page.DisplayAlert("Bravo", "Vous êtes connecté!", "ok");
+            }
+            else
+            {
+                await page.DisplayAlert("Erreur", "Votre mot de passe ou votre email n'est pas bon !", "ok");
+            }
+        }
+        public void NewEmailOrNot()
+        {
+            Patient.SuppresionPatientExistant();
+            Patient.SuppresionPatientConnecter();
+            // voir si l'email est déjà présent dans la collection ainsi que le mot de passe qui lui appartient 
+            ObservableCollection<Patient> LesPastients = Patient.GetListSQLite();
+            foreach (Patient unpatient in LesPastients)
+            {
+                if (EmailEntry == unpatient.Email && PasswordEntry == unpatient.Password)
                 {
-                    Patient.AjoutPatientConnecter(patient);
-                    Application.Current.MainPage = new PageAccueilVue();
-                    await page.DisplayAlert("Bravo", "Vous êtes connecté!", "ok");
+                    Patient.AjoutPatientConnecter(unpatient);
                 }
                 else
                 {
-                    await page.DisplayAlert("Erreur", "Votre mot de passe ou votre email n'est pas bon !", "ok");
+                    Patient.AjoutPatientExistant(unpatient);
                 }
             }
         }
-
 
         #endregion
     }

@@ -2317,6 +2317,3 @@ com.google.android.material.animation.TransformationCallback;com.google.android.
 Google.Common.Util.Concurrent.IListenableFuture, Xamarin.Google.Guava.ListenableFuture;com.google.common.util.concurrent.ListenableFuture
 Google.Common.Util.Concurrent.IListenableFuture;com.google.common.util.concurrent.ListenableFuture
 com.google.common.util.concurrent.ListenableFuture;com.google.common.util.concurrent.ListenableFuture
-Xamarin.Plugin.Calendar.Android.SwipeAwareContainerRenderer, Xamarin.Plugin.Calendar;crc64ef2c1b6c62d0b349.SwipeAwareContainerRenderer
-Xamarin.Plugin.Calendar.Android.SwipeAwareContainerRenderer;crc64ef2c1b6c62d0b349.SwipeAwareContainerRenderer
-xamarin.plugin.calendar.android.SwipeAwareContainerRenderer;crc64ef2c1b6c62d0b349.SwipeAwareContainerRenderer

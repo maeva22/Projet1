@@ -20,7 +20,7 @@ namespace Projet1.Vues
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            collectionView.ItemsSource = Professionel.GetProfessionelChoisie();
+            collectionView.ItemsSource = Professionnel.GetProfessionnelChoisie();
         }
     }
 }

@@ -10,22 +10,22 @@ using Xamarin.Forms;
 
 namespace Projet1.VueModeles
 {
-    class PageRechercheVueModele : BaseVueModele
+    public class PageRechercheVueModele : BaseVueModele
     {
         #region Attributs
-        ObservableCollection<Professionel> _maListeProfessionel;
-        private ObservableCollection<object> _selectedProfessionel; 
-        private Professionel _unProfessionel;
+        ObservableCollection<Professionnel> _maListeProfessionnel;
+        private ObservableCollection<object> _selectedProfessionnel; 
+        private Professionnel _unProfessionnel;
         #endregion
 
         #region Constructeurs
         public PageRechercheVueModele()
         {   // code permettant d'afficher la liste des professionels
-            ObservableCollection<Professionel> listeProfessionel = Professionel.GetListSQLite();
-            MaListeProfessionel = new ObservableCollection<Professionel>(listeProfessionel);
+            ObservableCollection<Professionnel> listeProfessionnel = Professionnel.GetListSQLite();
+            MaListeProfessionnel = new ObservableCollection<Professionnel>(listeProfessionnel);
 
-            SelectedProfessionel = new ObservableCollection<object>();
-            UnProfessionel = new Professionel
+            SelectedProfessionnel = new ObservableCollection<object>();
+            UnProfessionnel = new Professionnel
             {
                 Genre = "",
                 Nom = "",
@@ -39,63 +39,82 @@ namespace Projet1.VueModeles
                 CodePostale = "",
                 Ville = "",
                 Tarif = "",
-                Presentation = ""
+                Presentation = "",
             };
 
             BoutonPrendreRendezVous = new Command(ActionBoutonPrendreRendezVous);
-            SelectionChangedCommandProfessionel = new Command(ActionSelectionProfessionel);
+            SelectionChangedCommandProfessionnel = new Command(ActionSelectionProfessionnel);
         }
         #endregion
 
         #region Getters/Setters
-        public ObservableCollection<Professionel> MaListeProfessionel
+        public ObservableCollection<Professionnel> MaListeProfessionnel
         {
             get
             {
-                return _maListeProfessionel;
+                return _maListeProfessionnel;
             }
             set
             {
-                SetProperty(ref _maListeProfessionel, value);
+                SetProperty(ref _maListeProfessionnel, value);
             }
         }
-        public ObservableCollection<object> SelectedProfessionel
+        public ObservableCollection<object> SelectedProfessionnel
         {
             get
             {
-                return _selectedProfessionel;
+                return _selectedProfessionnel;
             }
             set
             {
-                SetProperty(ref _selectedProfessionel, value);
+                SetProperty(ref _selectedProfessionnel, value);
             }
         }
-        public Professionel UnProfessionel
+        public Professionnel UnProfessionnel
         {
             get
             {
-                return _unProfessionel;
+                return _unProfessionnel;
             }
             set
             {
-                SetProperty(ref _unProfessionel, value);
+                SetProperty(ref _unProfessionnel, value);
             }
         }
         public ICommand BoutonPrendreRendezVous { get; }
-        public ICommand SelectionChangedCommandProfessionel { get; }
+        public ICommand SelectionChangedCommandProfessionnel { get; }
         #endregion
 
         #region Methodes
         public void Method()
         {
-            if (SelectedProfessionel.Count > 0)
-                UnProfessionel = (Professionel)this.SelectedProfessionel[SelectedProfessionel.Count - 1];
-            Professionel.AjoutProfessionelChoisie(UnProfessionel);
+            if (SelectedProfessionnel.Count > 0)
+                UnProfessionnel = (Professionnel)this.SelectedProfessionnel[SelectedProfessionnel.Count - 1];
+            Professionnel.AjoutProfessionnelChoisie(UnProfessionnel);
         }
-        public void ActionSelectionProfessionel()
+        public async void ActionSelectionProfessionnel()
         {
             Method();
-            Application.Current.MainPage = new PageInformationsProfessionelVue();
+            var SalarieStored = await App.Database.GetAvecRelations<Professionnel>(UnProfessionnel);
+
+            Horaire A1 = new Horaire
+            {
+                Heuredébut = "9h00"
+            };
+            Horaire A2 = new Horaire
+            {
+                Heuredébut = "9h00"
+            };
+            SalarieStored.MaCollHoraire.Add(A1);
+
+            await App.Database.SaveItemAsync<Horaire>(A1);
+            SalarieStored.MaCollHoraire.Add(A2);
+
+            await App.Database.SaveItemAsync<Horaire>(A2);
+
+            await App.Database.MiseAJourRelation(SalarieStored);
+
+            Application.Current.MainPage = new PageInformationsProfessionnelVue();
         }
         public void ActionBoutonPrendreRendezVous()
         {

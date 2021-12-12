@@ -19,7 +19,7 @@ namespace Projet1.Calendrier.Controls.SelectionEngines
             return _selectedDate?.ToString(selectedDateTextFormat, culture);
         }
 
-        bool ISelectionEngine.TryGetSelectedEvents(EventCollection allEvents, out ICollection selectedEvents)
+        bool ISelectionEngine.TryGetSelectedEvents(HoraireCollection allEvents, out ICollection selectedEvents)
         {
             if (_selectedDate.HasValue)
                 return allEvents.TryGetValue(_selectedDate.Value, out selectedEvents);

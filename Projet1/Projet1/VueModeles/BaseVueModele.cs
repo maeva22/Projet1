@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Projet1.VueModeles
 {
-    class BaseVueModele : INotifyPropertyChanged
+    public class BaseVueModele : INotifyPropertyChanged
     {
         bool isBusy = false;
         bool reverseIsBusy = false;

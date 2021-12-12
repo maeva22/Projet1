@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Projet1.Vues.PageMonCompteVue"
+             Title="Mon compte">
+    <ContentPage.Content>
+        <Grid>
+            <BoxView>
+                <BoxView.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="blue" Offset="0"/>
+                        <GradientStop Color="Red" Offset="1"/>
+                    </LinearGradientBrush>
+                </BoxView.Background>
+            </BoxView>
+
+            <StackLayout HorizontalOptions="Center" Margin="20,140,20,0">
+                <Frame BackgroundColor="#BF043055" HasShadow="False"  CornerRadius="10" HeightRequest="250">
+                    <StackLayout >
+                        <CollectionView ItemsSource="{Binding LePatient}" VerticalOptions="Fill">
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout Orientation="Vertical" Span="1" />
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid RowDefinitions="250,1,1">
+                                        <Grid>
+                                            <Label  Text="Information de votre compte"  
+                                                    Grid.RowSpan="2" 
+                                                    Grid.Row="0" 
+                                                    Grid.Column="0" 
+                                                    Grid.ColumnSpan="2"
+                                                    HorizontalOptions="Center"
+                                                    TextColor="White"
+                                                    FontSize="Large"
+                                                    FontFamily="Bold"/> 
+                                            <Label Text="Nom : "
+                                                       Grid.Row="2" 
+                                                       Grid.Column="0" 
+                                                       TextColor="White" 
+                                                       FontAttributes="Bold"
+                                                       HorizontalOptions="Center"/>
+                                            <Label Text="{Binding Nom}"
+                                                       Grid.Row="2" 
+                                                       Grid.Column="1" 
+                                                       TextColor="White" 
+                                                       FontAttributes="Bold"
+                                                       HorizontalOptions="Start"/>
+                                            <Label Text="Prénom : "
+                                                       Grid.Row="3" 
+                                                       Grid.Column="0" 
+                                                       TextColor="White" 
+                                                       FontAttributes="Bold"
+                                                       HorizontalOptions="Center"/>
+                                            <Label Text="{Binding Prenom}"
+                                                       Grid.Row="3" 
+                                                       Grid.Column="1" 
+                                                       TextColor="White" 
+                                                       FontAttributes="Bold"
+                                                       HorizontalOptions="Start"/>
+                                            <Label Text="Numéro de Téléphone : "
+                                                       Grid.RowSpan="2" 
+                                                       Grid.Row="4" 
+                                                       Grid.Column="0" 
+                                                       TextColor="White" 
+                                                       FontAttributes="Bold"
+                                                       HorizontalOptions="Center"/>
+                                            <Label Text="{Binding NumeroDeTelephone}"
+                                                       Grid.Row="4" 
+                                                       Grid.Column="1" 
+                                                       TextColor="White" 
+                                                       FontAttributes="Bold"
+                                                       HorizontalOptions="Start"/>
+                                            <Label Text="Date de naissance : "
+                                                       Grid.RowSpan="2" 
+                                                       Grid.Row="6" 
+                                                       Grid.Column="0" 
+                                                       TextColor="White" 
+                                                       FontAttributes="Bold"
+                                                       HorizontalOptions="Center"/>
+                                            <Label Text="{Binding DateDeNaissance}"
+                                                       Grid.Row="6" 
+                                                       Grid.Column="1" 
+                                                       TextColor="White" 
+                                                       FontAttributes="Bold"
+                                                       HorizontalOptions="Start"/>
+                                        </Grid>
+                                    </Grid>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

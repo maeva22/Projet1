@@ -68,10 +68,6 @@
               "target": "Package",
               "version": "[5.0.0.2244, )"
             },
-            "Xamarin.Plugin.Calendar": {
-              "target": "Package",
-              "version": "[1.4.5304, )"
-            },
             "sqlite-net-pcl": {
               "target": "Package",
               "version": "[1.8.116, )"

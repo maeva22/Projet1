@@ -17,8 +17,16 @@ namespace Projet1.Vues {
     public partial class PagePriseDeRendezVousVue : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.ContentPage weekViewCalendarPage;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Projet1.Calendrier.Controls.Calendar calendrier;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(PagePriseDeRendezVousVue));
+            weekViewCalendarPage = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ContentPage>(this, "weekViewCalendarPage");
+            calendrier = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Projet1.Calendrier.Controls.Calendar>(this, "calendrier");
         }
     }
 }

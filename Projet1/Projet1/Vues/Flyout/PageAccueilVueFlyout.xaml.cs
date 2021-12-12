@@ -34,9 +34,9 @@ namespace Projet1.Vues.Flyout
                 MenuItems = new ObservableCollection<PageAccueilVueFlyoutMenuItem>(new[]
                 {
                     new PageAccueilVueFlyoutMenuItem { Id = 0, Title = "Accueil",IconSource="icon_home.png",TargetType =typeof(PageAccueilVueDetail)},
-                    new PageAccueilVueFlyoutMenuItem { Id = 1, Title = "Mon Compte",TargetType =typeof(PageConnexionVue) },
-                    new PageAccueilVueFlyoutMenuItem { Id = 2, Title = "Mes Rendez-vous",TargetType =typeof(PageMapVue) },
-                    new PageAccueilVueFlyoutMenuItem { Id = 3, Title = "Déconnexion",TargetType =typeof(PageAccueilVue) }
+                    new PageAccueilVueFlyoutMenuItem { Id = 1, Title = "Mon Compte",TargetType =typeof(PageMonCompteVue) },
+                   // new PageAccueilVueFlyoutMenuItem { Id = 2, Title = "Mes Rendez-vous",TargetType =typeof(PageMesRendezVousVue) },
+                    new PageAccueilVueFlyoutMenuItem { Id = 3, Title = "Déconnexion",TargetType =typeof(PageDeconnexionVue) }
 
                 });
             }

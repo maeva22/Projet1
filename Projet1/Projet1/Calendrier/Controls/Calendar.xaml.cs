@@ -132,14 +132,14 @@ namespace Projet1.Calendrier.Controls
         /// Bindable property for events
         /// </summary>
         public static readonly BindableProperty EventsProperty =
-          BindableProperty.Create(nameof(Events), typeof(EventCollection), typeof(Calendar), new EventCollection(), propertyChanged: OnEventsChanged);
+          BindableProperty.Create(nameof(Events), typeof(HoraireCollection), typeof(Calendar), new HoraireCollection(), propertyChanged: OnEventsChanged);
 
         /// <summary>
         /// Collection of all the events in the calendar
         /// </summary>
-        public EventCollection Events
+        public HoraireCollection Events
         {
-            get => (EventCollection)GetValue(EventsProperty);
+            get => (HoraireCollection)GetValue(EventsProperty);
             set => SetValue(EventsProperty, value);
         }
 
@@ -158,35 +158,7 @@ namespace Projet1.Calendrier.Controls
             set => SetValue(SelectedDayEventsProperty, value);
         }
 
-        /// <summary>
-        /// Bindable property for EventTemplate
-        /// </summary>
-        public static readonly BindableProperty EventTemplateProperty =
-          BindableProperty.Create(nameof(EventTemplate), typeof(DataTemplate), typeof(Calendar), null);
-
-        /// <summary>
-        /// Specifies the template to be used for showing events
-        /// </summary>
-        public DataTemplate EventTemplate
-        {
-            get => (DataTemplate)GetValue(EventTemplateProperty);
-            set => SetValue(EventTemplateProperty, value);
-        }
-
-        /// <summary>
-        /// Bindable property for EmptyTemplate
-        /// </summary>
-        public static readonly BindableProperty EmptyTemplateProperty =
-            BindableProperty.Create(nameof(EmptyTemplate), typeof(DataTemplate), typeof(Calendar), null);
-
-        /// <summary>
-        /// Specifies the data template to be shown when there are no events
-        /// </summary>
-        public DataTemplate EmptyTemplate
-        {
-            get => (DataTemplate)GetValue(EmptyTemplateProperty);
-            set => SetValue(EmptyTemplateProperty, value);
-        }
+ 
 
         /// <summary>
         /// Bindable property for MonthLabelColor
@@ -1032,10 +1004,10 @@ namespace Projet1.Calendrier.Controls
         {
             if (bindable is Calendar view)
             {
-                if (oldValue is EventCollection oldEvents)
+                if (oldValue is HoraireCollection oldEvents)
                     oldEvents.CollectionChanged -= view.OnEventsCollectionChanged;
 
-                if (newValue is EventCollection newEvents)
+                if (newValue is HoraireCollection newEvents)
                     newEvents.CollectionChanged += view.OnEventsCollectionChanged;
 
                 view.UpdateEvents();
@@ -1184,7 +1156,7 @@ namespace Projet1.Calendrier.Controls
             _calendarSectionHeight = calendarContainer.Height;
         }
 
-        private void OnEventsCollectionChanged(object sender, EventCollection.EventCollectionChangedArgs e)
+        private void OnEventsCollectionChanged(object sender, HoraireCollection.EventCollectionChangedArgs e)
         {
             UpdateEvents();
             monthDaysView.UpdateAndAnimateDays(AnimateCalendar);

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "YCs1k49BBXd+BXdO6irjQXI3nywQoGMS3NPgvSqX8Qi/VwEqI9i/v7D6FrXLtuZCZLAUX9T5d4QpDBgPPPWSQg==",
+  "dgSpecHash": "6S44FLBzUVLFhY18YIEqpciQq6Shjc1EfHjJShm8Q/gbdQxx5CGVSqQgHeqcLLv6wuPE4/bWJs5mcH2dznZP3w==",
   "success": true,
   "projectFilePath": "C:\\Xamarin\\Projet1\\Projet1\\Projet1.Android\\Projet1.Android.csproj",
   "expectedPackageFiles": [
@@ -76,8 +76,7 @@
     "C:\\Users\\maeva\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
     "C:\\Users\\maeva\\.nuget\\packages\\xamarin.forms\\5.0.0.2244\\xamarin.forms.5.0.0.2244.nupkg.sha512",
     "C:\\Users\\maeva\\.nuget\\packages\\xamarin.google.android.material\\1.4.0.2\\xamarin.google.android.material.1.4.0.2.nupkg.sha512",
-    "C:\\Users\\maeva\\.nuget\\packages\\xamarin.google.guava.listenablefuture\\1.0.0.2\\xamarin.google.guava.listenablefuture.1.0.0.2.nupkg.sha512",
-    "C:\\Users\\maeva\\.nuget\\packages\\xamarin.plugin.calendar\\1.4.5304\\xamarin.plugin.calendar.1.4.5304.nupkg.sha512"
+    "C:\\Users\\maeva\\.nuget\\packages\\xamarin.google.guava.listenablefuture\\1.0.0.2\\xamarin.google.guava.listenablefuture.1.0.0.2.nupkg.sha512"
   ],
   "logs": []
 }

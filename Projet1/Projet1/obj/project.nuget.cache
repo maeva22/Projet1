@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "b5nVflWGSRbiZsjk/fCcnwmYy5hzOqol9ybJaDkUy1kdrC9/9uQZrlm9BMD049V5KUuwKrM/e2ac3wRkqu2udg==",
+  "dgSpecHash": "hXdm+K0m5fMuwz2x0r0MxOdQqkX2udLeP9Dgn3p8aU28BKwTRpH7zG5jEn9rM/lKOaKzSHDnyy0CVTRqZbz/1A==",
   "success": true,
   "projectFilePath": "C:\\Xamarin\\Projet1\\Projet1\\Projet1\\Projet1.csproj",
   "expectedPackageFiles": [
@@ -54,8 +54,7 @@
     "C:\\Users\\maeva\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512",
     "C:\\Users\\maeva\\.nuget\\packages\\xam.plugins.forms.imagecircle\\3.1.1.1-beta\\xam.plugins.forms.imagecircle.3.1.1.1-beta.nupkg.sha512",
     "C:\\Users\\maeva\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
-    "C:\\Users\\maeva\\.nuget\\packages\\xamarin.forms\\5.0.0.2244\\xamarin.forms.5.0.0.2244.nupkg.sha512",
-    "C:\\Users\\maeva\\.nuget\\packages\\xamarin.plugin.calendar\\1.4.5304\\xamarin.plugin.calendar.1.4.5304.nupkg.sha512"
+    "C:\\Users\\maeva\\.nuget\\packages\\xamarin.forms\\5.0.0.2244\\xamarin.forms.5.0.0.2244.nupkg.sha512"
   ],
   "logs": []
 }

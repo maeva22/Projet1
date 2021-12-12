@@ -8,7 +8,7 @@ using Projet1.Vues;
 
 namespace Projet1.VueModeles
 {
-    class PageAccueilVueModele : BaseVueModele
+    public class PageAccueilVueModele : BaseVueModele
     {
         #region Attributs
         #endregion

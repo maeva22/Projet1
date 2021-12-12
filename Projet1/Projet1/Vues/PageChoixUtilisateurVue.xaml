@@ -18,7 +18,7 @@
                         HeightRequest="276"/>
             </StackLayout>
             <StackLayout Grid.Row="1" HorizontalOptions="Center" Margin="40,120,40,0">
-                <Label Text="Vous pouvez vous inscrire en tant que porfessionel de la santé (Médecin généraliste, Dentiste, ...) ou tout simplement en tant que patient"
+                <Label Text="Vous pouvez vous inscrire en tant que porfessionnel de la santé (Médecin généraliste, Dentiste, ...) ou tout simplement en tant que patient"
                        TextColor="White"
                        HorizontalTextAlignment="Center"
                        FontSize="Medium"/>
@@ -26,13 +26,13 @@
             </StackLayout>
             <StackLayout Grid.Row="2" HorizontalOptions="Center" Spacing="30" Margin="40,20,40,0">
                 <!--Spacing espace entre 2 -->
-                <Button Text="Professionel" 
+                <Button Text="Professionnel" 
                     BackgroundColor="Blue"
                     TextColor="White"
                     WidthRequest="150"
                     HeightRequest="46"
                     CornerRadius="23"
-                    Command="{Binding CommandBoutonProfessionel}"/>
+                    Command="{Binding CommandBoutonProfessionnel}"/>
                 <Button Text="Patient" 
                     BackgroundColor="Red"
                     TextColor="White"

@@ -1,5 +1,7 @@
 ﻿using SQLite;
+using SQLiteNetExtensions.Attributes;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
@@ -11,10 +13,9 @@ namespace Projet1.Modeles
     public class Horaire
     {
         #region Attributs
-        public static ObservableCollection<Horaire> CollHoraireChoisie = new ObservableCollection<Horaire>();
-        public static ObservableCollection<Horaire> CollHoraireRestant = new ObservableCollection<Horaire>();
         private int _id;
         private string _heuredébut;
+        private int _professionelId;
         #endregion
 
         #region Constructeurs
@@ -28,7 +29,8 @@ namespace Projet1.Modeles
         [PrimaryKey, AutoIncrement]
         public  int ID { get => _id; set => _id = value; }
         public string Heuredébut { get => _heuredébut; set => _heuredébut = value; }
-
+        [ForeignKey(typeof(Professionnel))]     // Specify the foreign key
+        public int IDProfessionel { get => _professionelId; set => _professionelId = value; }
 
         #endregion
 
@@ -40,27 +42,8 @@ namespace Projet1.Modeles
         }
         public static async Task<Horaire> AjoutItemSqlite(Horaire param)
         {
-
-            Horaire.AjoutHoraireRestant(param);
             await App.Database.SaveItemAsync<Horaire>(param);
             return param;
-
-        }
-        public static ObservableCollection<Horaire> GetHoraireRestant()
-        {
-            return Horaire.CollHoraireRestant;
-        }
-        public static void AjoutHoraireRestant(Horaire param)
-        {
-            Horaire.CollHoraireRestant.Add(param);
-        }        
-        public static void SupprimeHoraireRestant(Horaire param)
-        {
-            Horaire.CollHoraireRestant.Remove(param);
-        }
-        public static void AjoutHoraireChoisie(Horaire param)
-        {
-            Horaire.CollHoraireChoisie.Add(param);
         }
         #endregion
     }

@@ -36,37 +36,14 @@ namespace Projet1.Services
             if (!initialized)// la base de donnée existe ??
             {
                 //permet de créer la table Etudiant
-                //code a dupliqué par nb de table existante             
-                if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(Professionel).Name))
-                {
+                //code a dupliqué par nb de table existante
 
-                    await Database.CreateTablesAsync(CreateFlags.None, typeof(Professionel)).ConfigureAwait(false);
+                await Database.CreateTablesAsync(CreateFlags.None, typeof(Horaire)).ConfigureAwait(false);
+                await Database.CreateTablesAsync(CreateFlags.None, typeof(Patient)).ConfigureAwait(false);
+                await Database.CreateTablesAsync(CreateFlags.None, typeof(Professionnel)).ConfigureAwait(false);
+                await Database.CreateTablesAsync(CreateFlags.None, typeof(Rendez_vous)).ConfigureAwait(false);
+                await Database.CreateTablesAsync(CreateFlags.None, typeof(Utilisateur)).ConfigureAwait(false); 
 
-                }
-                if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(Patient).Name))
-                {
-
-                    await Database.CreateTablesAsync(CreateFlags.None, typeof(Patient)).ConfigureAwait(false);
-
-                }
-                if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(Utilisateur).Name))
-                {
-
-                    await Database.CreateTablesAsync(CreateFlags.None, typeof(Utilisateur)).ConfigureAwait(false);
-
-                }
-                if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(Horaire).Name))
-                {
-
-                    await Database.CreateTablesAsync(CreateFlags.None, typeof(Horaire)).ConfigureAwait(false);
-
-                }
-                if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(Rendez_vous).Name))
-                {
-
-                    await Database.CreateTablesAsync(CreateFlags.None, typeof(Rendez_vous)).ConfigureAwait(false);
-
-                }
                 initialized = true;
             }
         }

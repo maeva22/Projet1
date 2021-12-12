@@ -22,7 +22,7 @@ namespace Projet1.Calendrier.Controls.Interfaces
         /// <param name="allEvents">EventCollection with events</param>
         /// <param name="selectedEvents">returns ICollection of events for selected period</param>
         /// <returns>returns true if there are events in allEvents collection for selected period</returns>
-        bool TryGetSelectedEvents(EventCollection allEvents, out ICollection selectedEvents);
+        bool TryGetSelectedEvents(HoraireCollection allEvents, out ICollection selectedEvents);
 
         /// <summary>
         /// Method to check is selected day

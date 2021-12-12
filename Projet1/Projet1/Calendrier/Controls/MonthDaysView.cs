@@ -82,14 +82,14 @@ namespace Projet1.Calendrier.Controls
         /// Bindable property for Events
         /// </summary>
         public static readonly BindableProperty EventsProperty =
-          BindableProperty.Create(nameof(Events), typeof(EventCollection), typeof(MonthDaysView), new EventCollection());
+          BindableProperty.Create(nameof(Events), typeof(HoraireCollection), typeof(MonthDaysView), new HoraireCollection());
 
         /// <summary>
         /// Collection of all the events on the calendar
         /// </summary>
-        public EventCollection Events
+        public HoraireCollection Events
         {
-            get => (EventCollection)GetValue(EventsProperty);
+            get => (HoraireCollection)GetValue(EventsProperty);
             set => SetValue(EventsProperty, value);
         }
 

@@ -29,10 +29,10 @@
             </StackLayout>
             
             <StackLayout HorizontalOptions="Center" Margin="20,140,20,0">
-                <CollectionView ItemsSource="{Binding MaListeProfessionel}" VerticalOptions="Fill" 
-                                SelectedItems="{Binding SelectedProfessionel,Mode=OneWay}"
+                <CollectionView ItemsSource="{Binding MaListeProfessionnel}" VerticalOptions="Fill" 
+                                SelectedItems="{Binding SelectedProfessionnel,Mode=OneWay}"
                                 SelectionMode="Multiple"
-                                SelectionChangedCommand ="{Binding SelectionChangedCommandProfessionel,Mode=OneWay}">
+                                SelectionChangedCommand ="{Binding SelectionChangedCommandProfessionnel,Mode=OneWay}">
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout Orientation="Vertical" Span="1" />
                     </CollectionView.ItemsLayout>
@@ -57,7 +57,7 @@
                                                TextColor="White" 
                                                FontAttributes="Bold"
                                                HorizontalOptions="Start"/>
-                                    </Grid>    
+                                    </Grid> 
                                 </Frame>
                             </Grid>
                         </DataTemplate>

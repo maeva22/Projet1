@@ -78,9 +78,6 @@
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2244" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
-    <PackageReference Include="Xamarin.Plugin.Calendar">
-      <Version>1.4.5304</Version>
-    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -117,6 +114,7 @@
     <AndroidResource Include="Resources\drawable\baseline_calendar_today_24.xml" />
     <AndroidResource Include="Resources\drawable\baseline_date_range_24.xml" />
     <AndroidResource Include="Resources\drawable\baseline_event_24.xml" />
+    <AndroidResource Include="Resources\drawable\manydoctor.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Projet1\Projet1.csproj">

@@ -7,28 +7,28 @@ namespace Projet1.Calendrier.Models
     /// <summary> 
     /// Calendar events collection, wraps <see cref="Dictionary{DateTime, ICollection}" />
     /// </summary>
-    public class EventCollection : Dictionary<DateTime, ICollection>
+    public class HoraireCollection : Dictionary<DateTime, ICollection>
     {
         #region ctor
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EventCollection"/> class
+        /// Initializes a new instance of the <see cref="HoraireCollection"/> class
         /// that is empty, has the default initial capacity, and uses the default equality
         /// comparer for the key type.
         /// </summary>
-        public EventCollection() : base()
+        public HoraireCollection() : base()
         { }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EventCollection"/> class
+        /// Initializes a new instance of the <see cref="HoraireCollection"/> class
         /// that is empty, has the specified initial capacity, and uses the default equality
         /// comparer for the key type.
         /// </summary>
         /// <param name="capacity">
-        /// The initial number of elements that the <see cref="EventCollection"/> can contain.
+        /// The initial number of elements that the <see cref="HoraireCollection"/> can contain.
         /// </param>
         /// <exception cref="ArgumentOutOfRangeException">capacity is less than 0.</exception>
-        public EventCollection(int capacity) : base(capacity)
+        public HoraireCollection(int capacity) : base(capacity)
         { }
 
         #endregion

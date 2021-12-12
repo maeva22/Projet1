@@ -23,7 +23,7 @@ namespace Projet1.Calendrier.Controls.SelectionEngines
             return string.Empty;
         }
 
-        bool ISelectionEngine.TryGetSelectedEvents(EventCollection allEvents, out ICollection selectedEvents)
+        bool ISelectionEngine.TryGetSelectedEvents(HoraireCollection allEvents, out ICollection selectedEvents)
         {
             var listOfEvents = CreateRangeList();
             return allEvents.TryGetValues(listOfEvents, out selectedEvents);

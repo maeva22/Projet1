@@ -13,8 +13,9 @@ namespace Projet1
     public partial class App : Application
     {
         static GestionDataBase database;
-        public ObservableCollection<Professionel> listeProfessionel;
+        public ObservableCollection<Professionnel> listeProfessionel;
         public ObservableCollection<Horaire> listeHoraire;
+        public ObservableCollection<Patient> listePatient;
         public App()
         {
             InitializeComponent();
@@ -24,14 +25,17 @@ namespace Projet1
 
         protected override void OnStart()
         {
+            Patient.SuppresionPatientConnecter();
         }
 
         protected override void OnSleep()
         {
+            Patient.SuppresionPatientConnecter();
         }
 
         protected override void OnResume()
         {
+            Patient.SuppresionPatientConnecter();
         }
         public static GestionDataBase Database
         {
@@ -46,11 +50,11 @@ namespace Projet1
         }
         public async Task GetListe()
         {
-            await App.database.DeleteItemsAsync<Professionel>(); // efface tous les professionels dans la table 
+            await App.database.DeleteItemsAsync<Professionnel>(); // efface tous les professionels dans la table 
 
-            listeProfessionel = App.Database.GetItemsAsync<Professionel>();
+            listeProfessionel = App.Database.GetItemsAsync<Professionnel>();
 
-            if (listeProfessionel.FirstOrDefault(cus => cus.Nom == "ROBIN") == null) await Professionel.AjoutItemSqlite(new Professionel{
+            if (listeProfessionel.FirstOrDefault(cus => cus.Nom == "ROBIN") == null) await Professionnel.AjoutItemSqlite(new Professionnel{
                 Genre = "Femme",
                 Nom = "ROBIN",
                 Prenom = "oceane",
@@ -64,9 +68,9 @@ namespace Projet1
                 Ville="lannion",
                 Tarif="3.50",
                 Presentation= "Le médecin généraliste accueille les enfants et les adultes pour tous types de soins médicaux généraux (consultation, contrôle annuel, vaccination, bilan de santé). " +
-                "Il assure également un suivi des patients dans le temps et les oriente vers des médecins spécialistes en cas de besoin."
+                "Il assure également un suivi des patients dans le temps et les oriente vers des médecins spécialistes en cas de besoin.",
             });
-            if (listeProfessionel.FirstOrDefault(cus => cus.Nom == "DESABLENS") == null) await Professionel.AjoutItemSqlite(new Professionel {
+            /*if (listeProfessionel.FirstOrDefault(cus => cus.Nom == "DESABLENS") == null) await Professionnel.AjoutItemSqlite(new Professionnel {
                 Genre = "Femme",
                 Nom = "DESABLENS", 
                 Prenom = "maeva",
@@ -81,8 +85,8 @@ namespace Projet1
                 Tarif = "3.50",
                 Presentation = "Le médecin généraliste accueille les enfants et les adultes pour tous types de soins médicaux généraux (consultation, contrôle annuel, vaccination, bilan de santé). " +
                 "Il assure également un suivi des patients dans le temps et les oriente vers des médecins spécialistes en cas de besoin."
-            });
-            if (listeProfessionel.FirstOrDefault(cus => cus.Nom == "L'HER") == null) await Professionel.AjoutItemSqlite(new Professionel {
+            });*/
+            if (listeProfessionel.FirstOrDefault(cus => cus.Nom == "L'HER") == null) await Professionnel.AjoutItemSqlite(new Professionnel {
                 Genre = "Femme",
                 Nom = "L'HER", 
                 Prenom = "emilie",
@@ -98,7 +102,7 @@ namespace Projet1
                 Presentation = "La sage-femme est une spécialiste de la grossesse. Elle surveille le travail et pratique l'accouchement eutocique (l'accouchement normal). " +
                 "Elle dispense aussi les soins nécessaires à la mère et au nouveau-né et conseille les femmes sur l'allaitement et la contraception."
             });
-            if (listeProfessionel.FirstOrDefault(cus => cus.Nom == "LEMARCHAND") == null) await Professionel.AjoutItemSqlite(new Professionel {
+            if (listeProfessionel.FirstOrDefault(cus => cus.Nom == "LEMARCHAND") == null) await Professionnel.AjoutItemSqlite(new Professionnel {
                 Genre = "Homme",
                 Nom = "BIGNON", 
                 Prenom = "anthony",
@@ -114,7 +118,7 @@ namespace Projet1
                 Presentation = "Le chirurgien-dentiste, aussi appelé dentiste, prend en charge les problèmes bucco-dentaires. " +
                 "Ce spécialiste de la dentition s'occupe aussi bien des dents, des gencives et des nerfs que des maxillaires."
             });
-            if (listeProfessionel.FirstOrDefault(cus => cus.Nom == "CHASSAN") == null) await Professionel.AjoutItemSqlite(new Professionel {
+            if (listeProfessionel.FirstOrDefault(cus => cus.Nom == "CHASSAN") == null) await Professionnel.AjoutItemSqlite(new Professionnel {
                 Genre = "Homme",
                 Nom = "CHASSAN", 
                 Prenom = "armand",
@@ -130,7 +134,7 @@ namespace Projet1
                 Presentation = "L’orthoptiste est un professionnel de santé qui pratique la rééducation, la réadaptation, le dépistage et l’exploration fonctionnelle de la vision. " +
                 "Sa fonction s’étend du nourrisson à la personne âgée et se fait uniquement sur prescription médicale."
             });
-            if (listeProfessionel.FirstOrDefault(cus => cus.Nom == "TOINEN") == null) await Professionel.AjoutItemSqlite(new Professionel {
+            if (listeProfessionel.FirstOrDefault(cus => cus.Nom == "TOINEN") == null) await Professionnel.AjoutItemSqlite(new Professionnel {
                 Genre = "Homme",
                 Nom = "TOINEN", 
                 Prenom = "benoit",
@@ -147,7 +151,7 @@ namespace Projet1
                 "Il prend en charge des pathologies comme l'ostéoporose, l'arthrose, la hernie discale ou encore la tendinite. " +
                 "Ce spécialiste des articulations s'occupe aussi des affections inflammatoires et des maladies auto-immunes qui peuvent avoir de nombreuses manifestations extra-articulaires (peau, yeux, reins, poumons, etc.)."
             });
-            if (listeProfessionel.FirstOrDefault(cus => cus.Nom == "CABIOCH") == null) await Professionel.AjoutItemSqlite(new Professionel {
+            if (listeProfessionel.FirstOrDefault(cus => cus.Nom == "CABIOCH") == null) await Professionnel.AjoutItemSqlite(new Professionnel {
                 Genre = "Homme",
                 Nom = "CABIOCH", 
                 Prenom = "enzo",
@@ -164,7 +168,7 @@ namespace Projet1
                 "Médicotel envisage cette mission sous l’angle d’une approche dans l'air du temps en usant de nouveaux modes de communication au bénéfice de tous. " +
                 "C'est une Médecine préventive qui se doit d'être disponible et particulièrement en temps de crise sanitaire."
             });
-            if (listeProfessionel.FirstOrDefault(cus => cus.Nom == "DUAULT") == null) await Professionel.AjoutItemSqlite(new Professionel {
+            if (listeProfessionel.FirstOrDefault(cus => cus.Nom == "DUAULT") == null) await Professionnel.AjoutItemSqlite(new Professionnel {
                 Genre = "Homme",
                 Nom = "DUAULT", 
                 Prenom = "gurvan",
@@ -179,7 +183,7 @@ namespace Projet1
                 Tarif = "3.50",
                 Presentation = ""
             });
-            if (listeProfessionel.FirstOrDefault(cus => cus.Nom == "THOMAS") == null) await Professionel.AjoutItemSqlite(new Professionel {
+            if (listeProfessionel.FirstOrDefault(cus => cus.Nom == "THOMAS") == null) await Professionnel.AjoutItemSqlite(new Professionnel {
                 Genre = "Homme",
                 Nom = "THOMAS",
                 Prenom = "jean-andre",
@@ -195,7 +199,7 @@ namespace Projet1
                 Presentation = "Le chirurgien orthopédiste traite les problèmes musculo-squelettiques. " +
                 "Il s'occupe plus généralement des traumatismes et des maladies de l'appareil locomoteur : tendons, ligaments, os, muscles et articulations."
             });
-            if (listeProfessionel.FirstOrDefault(cus => cus.Nom == "VILLALARD") == null) await Professionel.AjoutItemSqlite(new Professionel {
+            if (listeProfessionel.FirstOrDefault(cus => cus.Nom == "VILLALARD") == null) await Professionnel.AjoutItemSqlite(new Professionnel {
                 Genre = "Homme",
                 Nom = "VILLALARD", 
                 Prenom = "kelig",
@@ -212,7 +216,7 @@ namespace Projet1
                 "Il prend en charge le patient du diagnostic au traitement et peut lui apporter des conseils " +
                 "pour gérer au mieux les sources d'allergies dans son environnement : nature, nourriture, habitat, évolutions techniques, etc. "
             });
-            if (listeProfessionel.FirstOrDefault(cus => cus.Nom == "LE PAVEC") == null) await Professionel.AjoutItemSqlite(new Professionel {
+            if (listeProfessionel.FirstOrDefault(cus => cus.Nom == "LE PAVEC") == null) await Professionnel.AjoutItemSqlite(new Professionnel {
                 Genre = "Homme",
                 Nom = "LE PAVEC", 
                 Prenom = "malo",
@@ -228,7 +232,7 @@ namespace Projet1
                 Presentation = "Le dermatologue traite les pathologies de la peau, des muqueuses et des phanères (ongles, cheveux, poils). " +
                 "La vénérologie traite les maladies sexuellement transmissibles."
             });
-            if (listeProfessionel.FirstOrDefault(cus => cus.Nom == "CHENEVIERE") == null) await Professionel.AjoutItemSqlite(new Professionel {
+            if (listeProfessionel.FirstOrDefault(cus => cus.Nom == "CHENEVIERE") == null) await Professionnel.AjoutItemSqlite(new Professionnel {
                 Genre = "Femme",
                 Nom = "CHENEVIERE", 
                 Prenom = "manon",
@@ -245,7 +249,7 @@ namespace Projet1
                 "Il traite des pathologies telles que l'hémophilie, " +
                 "le cancer (du sein, par exemple, dans les familles porteuses des gènes BRCA1 ou BRCA2), les maladies neurologiques etc."
             });
-            if (listeProfessionel.FirstOrDefault(cus => cus.Nom == "TACON") == null) await Professionel.AjoutItemSqlite(new Professionel {
+            if (listeProfessionel.FirstOrDefault(cus => cus.Nom == "TACON") == null) await Professionnel.AjoutItemSqlite(new Professionnel {
                 Genre = "Homme",
                 Nom = "TACON", 
                 Prenom = "romain",
@@ -261,7 +265,7 @@ namespace Projet1
                 Presentation = "L’infirmier délivre des soins infirmiers prescrits ou conseillés. " +
                 "Il participe aussi à différentes actions de prévention, d’éducation de la santé, de formation ou d’encadrement."
             });
-            if (listeProfessionel.FirstOrDefault(cus => cus.Nom == "TAZARART") == null) await Professionel.AjoutItemSqlite(new Professionel {
+            if (listeProfessionel.FirstOrDefault(cus => cus.Nom == "TAZARART") == null) await Professionnel.AjoutItemSqlite(new Professionnel {
                 Genre = "Femme",
                 Nom = "TAZARART", 
                 Prenom = "thereza",
@@ -277,7 +281,7 @@ namespace Projet1
                 Presentation = "Nous accueillons des patients ayant subi des traumatismes oculaires, qu'ils soient accidentels, génétiques ou provoqués par une maladie. " +
                 "Selon le cas, une opération est parfois nécessaire avant l'appareillage, mais dans la mesure du possible, nous évitons l'intervention en fabriquant des prothèses sur mesure. "
             });
-            if (listeProfessionel.FirstOrDefault(cus => cus.Nom == "DARGHI") == null) await Professionel.AjoutItemSqlite(new Professionel {
+            if (listeProfessionel.FirstOrDefault(cus => cus.Nom == "DARGHI") == null) await Professionnel.AjoutItemSqlite(new Professionnel {
                 Genre = "Homme",
                 Nom = "DARGHI", 
                 Prenom = "wassil",
@@ -293,6 +297,24 @@ namespace Projet1
                 Presentation = "Le praticien a une longue expérience en imagerie (IRM et scanner) dans les domaines de la neurologie, l’ophtalmologie et l’ORL, les pathologies rachidiennes et médullaires. " +
                 "Elle réalise ces explorations avec attention, adaptées au cas clinique du patient et le reçoit en consultation à l’issue de l’examen. "
             });
+
+            // pour les patient 
+            await App.database.DeleteItemsAsync<Patient>(); // efface tous les professionels dans la table 
+
+            listePatient = App.Database.GetItemsAsync<Patient>();
+
+            if (listePatient.FirstOrDefault(cus => cus.Nom == "DESABLENS") == null) await Patient.AjoutItemSqlite(new Patient
+            {
+                Genre = "Femme",
+                Nom = "DESABLENS",
+                Prenom = "maeva",
+                DateDeNaissance = new DateTime(2002, 02, 24),
+                NumeroTelephone = "0615489764",
+                Email = "mdesablens.ledantec@gmail.com",
+                Password = "toto"
+            });
+
+
 
             // pour les horaires
             await App.database.DeleteItemsAsync<Horaire>(); // efface tous les horaires dans la table 

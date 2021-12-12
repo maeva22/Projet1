@@ -30,7 +30,6 @@
     <PackageReference Include="Xam.Plugins.Forms.ImageCircle" Version="3.1.1.1-beta" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2244" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
-    <PackageReference Include="Xamarin.Plugin.Calendar" Version="1.4.5304" />
   </ItemGroup>
 
   <ItemGroup>
@@ -40,8 +39,14 @@
     <Compile Update="Vues\PageChoixUtilisateurVue.xaml.cs">
       <DependentUpon>PageChoixUtilisateurVue.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Vues\PageInscriptionProfessionelVue.xaml.cs">
-      <DependentUpon>PageInscriptionProfessionelVue.xaml</DependentUpon>
+    <Compile Update="Vues\PageInformationsProfessionnelVue.xaml.cs">
+      <DependentUpon>PageInformationsProfessionnelVue.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Vues\PageInscriptionPatientVue.xaml.cs">
+      <DependentUpon>PageInscriptionPatientVue.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Vues\PageInscriptionProfessionnelVue.xaml.cs">
+      <DependentUpon>PageInscriptionProfessionnelVue.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -58,10 +63,16 @@
     <EmbeddedResource Update="Vues\Flyout\PageAccueilVueFlyout.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Vues\PageInformationsProfessionelVue.xaml">
+    <EmbeddedResource Update="Vues\PageDeconnexionVue.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Vues\PageInformationsProfessionnelVue.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Vues\PageMapVue.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Vues\PageMonCompteVue.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Vues\PagePriseDeRendezVousVue.xaml">
@@ -79,16 +90,10 @@
     <EmbeddedResource Update="Vues\PageConnexionVue.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Vues\PageInscription1Vue.xaml">
+    <EmbeddedResource Update="Vues\PageInscriptionPatientVue.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Vues\PageInscription2Vue.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Vues\PageInscription3Vue.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Vues\PageInscriptionProfessionelVue.xaml">
+    <EmbeddedResource Update="Vues\PageInscriptionProfessionnelVue.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Vues\VisualisationDeLaBaseDeDonnee.xaml">

@@ -18,8 +18,8 @@
                             BackgroundColor="AliceBlue"/>
             </StackLayout>
             <StackLayout HorizontalOptions="Center" Margin="0,70,0,0">
-                <Button Text="Vous cherchez un professionel particulier ou dont vous connaisez le nom cliquez-ici !"  
-                        Image="map_picture.png"
+                <Button Text="Vous cherchez un professionnel particulier ou dont vous connaisez le nom cliquez-ici !"  
+                        Image="manydoctor.jpg"
                         ContentLayout="top,5"
                         TextColor="White"
                         BackgroundColor="#BF043055"
@@ -29,7 +29,7 @@
                         Command="{Binding CommandBoutonProfession}"/>
             </StackLayout>
             <StackLayout Grid.Row="1" HorizontalOptions="Center" Margin="0,120,0,0">
-                <Button Text="Vous voulez rechercher un professionel dans un endroit spécifique cliquez-ici !"  
+                <Button Text="Vous voulez rechercher un professionnel dans un endroit spécifique cliquez-ici !"  
                         Image="map_picture.png"
                         ContentLayout="top,5"
                         TextColor="White"

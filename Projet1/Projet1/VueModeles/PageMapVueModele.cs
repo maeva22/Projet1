@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace Projet1.VueModeles
 {
-     class PageMapVueModele : BaseVueModele
+    public class PageMapVueModele : BaseVueModele
     {
         #region Attributs
         #endregion

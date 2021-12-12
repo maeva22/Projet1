@@ -30,7 +30,7 @@ namespace Projet1.Modeles
         [PrimaryKey, AutoIncrement]
         public int ID { get => _id; set => _id = value; }
         public DateTime DateRendezVous { get => _dateRendezVous; set => _dateRendezVous = value; }
-        [ForeignKey(typeof(Professionel))]     // Specify the foreign key
+        [ForeignKey(typeof(Professionnel))]     // Specify the foreign key
         public int IDProfessionel { get => _idProfessionel; set => _idProfessionel = value; }
         [ForeignKey(typeof(Patient))]     // Specify the foreign key
         public int IDPatient { get => _idPatient; set => _idPatient = value; }
