@@ -3,6 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Projet1.Vues.PageRechercheVue"
              Title="Recherche">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  Command="{Binding CommandReturn}" Text="Return" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid>
             <BoxView>

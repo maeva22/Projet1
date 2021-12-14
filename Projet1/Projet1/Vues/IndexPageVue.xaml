@@ -29,7 +29,7 @@
                        HorizontalTextAlignment="Center"
                        FontSize="Medium"/>
             </StackLayout>
-            <StackLayout Grid.Row="2" HorizontalOptions="Center" Margin="40,30,40,0" Spacing="20"> <!--Spacing espace entre 2 -->
+            <StackLayout Grid.Row="2" HorizontalOptions="Center" Margin="40,40,40,0" Spacing="30"> <!--Spacing espace entre 2 -->
                 <Button Text="Connexion" 
                         BackgroundColor="Blue"
                         TextColor="White"

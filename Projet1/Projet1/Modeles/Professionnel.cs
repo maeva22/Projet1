@@ -15,6 +15,7 @@ namespace Projet1.Modeles
         public static ObservableCollection<Professionnel> CollProfessionnelChoisie = new ObservableCollection<Professionnel>();
         public static ObservableCollection<Professionnel> CollProfessionnelExistant = new ObservableCollection<Professionnel>();
         public static ObservableCollection<Professionnel> CollProfessionnelNouveauAttente = new ObservableCollection<Professionnel>();
+        public static ObservableCollection<Professionnel> CollProfessionnelConnecter = new ObservableCollection<Professionnel>();
 
         private int _id;
         private string _formation;
@@ -23,7 +24,6 @@ namespace Projet1.Modeles
         private string _ville;
         private string _tarif;
         private string _presentation;
-        private  ObservableCollection<Horaire> _maCollHoraire ;
         #endregion
 
         #region Constructeurs
@@ -42,12 +42,11 @@ namespace Projet1.Modeles
         public string Tarif { get => _tarif; set => _tarif = value; }
         public string Presentation { get => _presentation; set => _presentation = value; }
 
-        [OneToMany(CascadeOperations = CascadeOperation.All)]
-        public ObservableCollection<Horaire> MaCollHoraire { get => _maCollHoraire; set => _maCollHoraire = value; }
 
         #endregion
 
         #region Methodes
+
         public static new ObservableCollection<Professionnel> GetListSQLite()
         {
             return App.Database.GetItemsAsync<Professionnel>();

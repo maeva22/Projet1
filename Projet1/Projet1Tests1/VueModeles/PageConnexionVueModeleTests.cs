@@ -14,14 +14,14 @@ namespace Projet1.VueModeles.Tests
         public void OnSubmitTest()
         {
             // jeu d'essai 
-            /*Patient TR1 = new Patient("");
-            Patient TR2 = new Patient("");
-
+            Patient TR1 = new Patient(1,"homme","nom1","prenom1",DateTime.Now,"0546821946","adresse@gamil.com","password");
+            
+            Patient.CollPatientConnecter.Add(TR1);
             //test methode
-            int expective = C1.GetPatientConnecter();
+            int expective = Patient.CollPatientConnecter.Count;
 
             // Assert
-            Assert.AreEqual(expective, 1);*/
+            Assert.AreEqual(expective, 1);
         }
     }
 }

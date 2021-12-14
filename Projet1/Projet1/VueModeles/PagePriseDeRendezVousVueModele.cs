@@ -45,6 +45,7 @@ namespace Projet1.VueModeles
 
             BoutonRetour = new Command(ActionCommandBoutonRetour);
 
+            // code essaie pour l'horaire 
             ObservableCollection<Horaire> listeHoraire = Horaire.GetListSQLite();
             MaListeHoraire = new ObservableCollection<Horaire>(listeHoraire);
 
@@ -54,8 +55,14 @@ namespace Projet1.VueModeles
                 Heuredébut = "",
             };
             SelectionChangedCommandHoraire = new Command(ActionSelectionHoraire);
+            // fin code essaie 
 
             CommandHoraire = new Command(ActionHoraire);
+
+            Events = new HoraireCollection
+            {
+                [DateTime.Now.AddDays(10)] = new List<Horaire>(GenerateEvents(1, "Pas de rendez-vous possible ce jour là")),
+            };
         }
         #endregion
 
@@ -105,6 +112,7 @@ namespace Projet1.VueModeles
             }
         }
         // public Calendrier 
+        public HoraireCollection Events { get; }
         public int Day
         {
             get => _day;

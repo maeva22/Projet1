@@ -71,7 +71,7 @@ namespace Projet1.VueModeles
         // méthode permettant à un utilisateur de se connecter
         public async void OnSubmit()
         {
-            NewEmailOrNot();
+            NewEmailOrNotPatient();
             if (Patient.CollPatientConnecter.Count == 1 )
             {
                 Application.Current.MainPage = new PageAccueilVue();
@@ -82,7 +82,7 @@ namespace Projet1.VueModeles
                 await page.DisplayAlert("Erreur", "Votre mot de passe ou votre email n'est pas bon !", "ok");
             }
         }
-        public void NewEmailOrNot()
+        public void NewEmailOrNotPatient()
         {
             Patient.SuppresionPatientExistant();
             Patient.SuppresionPatientConnecter();

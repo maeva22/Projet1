@@ -25,6 +25,18 @@ namespace Projet1.Modeles
         #region Constructeurs
         public Utilisateur()
         {
+           
+        }
+        public Utilisateur(int id, string genre, string nom, string prenom, DateTime dateDeNaissance, string numeroTelephone, string email, string password)
+        {
+            _id = id;
+            _genre = genre;
+            _nom = nom;
+            _prenom = prenom;
+            _dateDeNaissance = dateDeNaissance;
+            _numeroTelephone = numeroTelephone;
+            _email = email;
+            _password = password;
         }
 
         #endregion

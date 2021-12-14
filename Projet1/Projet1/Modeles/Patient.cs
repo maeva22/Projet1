@@ -22,6 +22,11 @@ namespace Projet1.Modeles
         public Patient()
         {
         }
+        public Patient(int id, string genre, string nom, string prenom, DateTime dateDeNaissance, string numeroTelephone, string email, string password) 
+            :base(id, genre, nom, prenom,dateDeNaissance, numeroTelephone, email, password)
+        {
+            _id = id;
+        }
         #endregion
 
         #region Getters/Setters

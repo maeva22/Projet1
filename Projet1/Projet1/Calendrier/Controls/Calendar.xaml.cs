@@ -157,8 +157,35 @@ namespace Projet1.Calendrier.Controls
             get => (ICollection)GetValue(SelectedDayEventsProperty);
             set => SetValue(SelectedDayEventsProperty, value);
         }
+        /// <summary>
+        /// Bindable property for EventTemplate
+        /// </summary>
+        public static readonly BindableProperty EventTemplateProperty =
+          BindableProperty.Create(nameof(EventTemplate), typeof(DataTemplate), typeof(Calendar), null);
 
- 
+        /// <summary>
+        /// Specifies the template to be used for showing events
+        /// </summary>
+        public DataTemplate EventTemplate
+        {
+            get => (DataTemplate)GetValue(EventTemplateProperty);
+            set => SetValue(EventTemplateProperty, value);
+        }
+
+        /// <summary>
+        /// Bindable property for EmptyTemplate
+        /// </summary>
+        public static readonly BindableProperty EmptyTemplateProperty =
+            BindableProperty.Create(nameof(EmptyTemplate), typeof(DataTemplate), typeof(Calendar), null);
+
+        /// <summary>
+        /// Specifies the data template to be shown when there are no events
+        /// </summary>
+        public DataTemplate EmptyTemplate
+        {
+            get => (DataTemplate)GetValue(EmptyTemplateProperty);
+            set => SetValue(EmptyTemplateProperty, value);
+        }
 
         /// <summary>
         /// Bindable property for MonthLabelColor

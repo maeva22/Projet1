@@ -1,5 +1,6 @@
 ﻿using Projet1.Modeles;
 using Projet1.Vues;
+using Projet1.Vues.Flyout;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -42,12 +43,13 @@ namespace Projet1.VueModeles
                 Presentation = "",
             };
 
-            BoutonPrendreRendezVous = new Command(ActionBoutonPrendreRendezVous);
             SelectionChangedCommandProfessionnel = new Command(ActionSelectionProfessionnel);
+
+            CommandReturn = new Command(ActionCommandReturn);
         }
         #endregion
 
-        #region Getters/Setters
+        #region Getters/Setters 
         public ObservableCollection<Professionnel> MaListeProfessionnel
         {
             get
@@ -81,45 +83,25 @@ namespace Projet1.VueModeles
                 SetProperty(ref _unProfessionnel, value);
             }
         }
-        public ICommand BoutonPrendreRendezVous { get; }
         public ICommand SelectionChangedCommandProfessionnel { get; }
+        public ICommand CommandReturn { get; }
         #endregion
 
-        #region Methodes
+        #region Methodes 
         public void Method()
         {
             if (SelectedProfessionnel.Count > 0)
                 UnProfessionnel = (Professionnel)this.SelectedProfessionnel[SelectedProfessionnel.Count - 1];
             Professionnel.AjoutProfessionnelChoisie(UnProfessionnel);
         }
-        public async void ActionSelectionProfessionnel()
+        public void ActionSelectionProfessionnel()
         {
             Method();
-            var SalarieStored = await App.Database.GetAvecRelations<Professionnel>(UnProfessionnel);
-
-            Horaire A1 = new Horaire
-            {
-                Heuredébut = "9h00"
-            };
-            Horaire A2 = new Horaire
-            {
-                Heuredébut = "9h00"
-            };
-            SalarieStored.MaCollHoraire.Add(A1);
-
-            await App.Database.SaveItemAsync<Horaire>(A1);
-            SalarieStored.MaCollHoraire.Add(A2);
-
-            await App.Database.SaveItemAsync<Horaire>(A2);
-
-            await App.Database.MiseAJourRelation(SalarieStored);
-
             Application.Current.MainPage = new PageInformationsProfessionnelVue();
         }
-        public void ActionBoutonPrendreRendezVous()
+        public void ActionCommandReturn()
         {
-            Method();
-            Application.Current.MainPage = new NavigationPage(new PagePriseDeRendezVousVue());
+            Application.Current.MainPage = new PageAccueilVue();
         }
 
         #endregion

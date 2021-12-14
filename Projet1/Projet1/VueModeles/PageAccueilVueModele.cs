@@ -30,11 +30,11 @@ namespace Projet1.VueModeles
         #region Methodes
         public void ActionCommandBoutonMap()
         {
-            Application.Current.MainPage = new PageMapVue();
+            Application.Current.MainPage = new NavigationPage(new PageMapVue());
         }
         public void ActionCommandBoutonProfession()
         {
-            Application.Current.MainPage = new PageRechercheVue();
+            Application.Current.MainPage = new NavigationPage(new PageRechercheVue());
         }
         #endregion
     }

@@ -15,7 +15,17 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Fichiers divers",
       "ColorIndex": -1
+    },
+    "2675e017-408a-4165-b9b5-bef57bfcfb0c": {
+      "ProjectGuid": "2675e017-408a-4165-b9b5-bef57bfcfb0c",
+      "DisplayName": "Projet1Tests",
+      "ColorIndex": 2
+    },
+    "f503abcc-16b0-4559-bc5f-578c03fe3c25": {
+      "ProjectGuid": "f503abcc-16b0-4559-bc5f-578c03fe3c25",
+      "DisplayName": "Projet1Tests1",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 4
 }

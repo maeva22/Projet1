@@ -144,13 +144,12 @@
                             Keyboard="Telephone"
                             ClearButtonVisibility="WhileEditing"/>
 
-                            <Entry x:Name="PresentationEntry"
+                            <Editor x:Name="PresentationEntry"
                             Placeholder="Présentez-vous en quelques lignes ..."
                             PlaceholderColor="White"
                             TextColor="White"
                             WidthRequest="275"
-                            MaxLength="30"
-                            ClearButtonVisibility="WhileEditing"/>
+                            MaxLength="400"/>
                         </StackLayout>
                     </Frame>
 

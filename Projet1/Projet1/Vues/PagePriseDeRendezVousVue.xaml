@@ -37,7 +37,7 @@
             </StackLayout>
             <StackLayout HorizontalOptions="Center" Margin="20,150,20,0">
                 <Grid RowDefinitions="300,5">
-                    <Frame BackgroundColor="white" HasShadow="False"  CornerRadius="10">
+                    <Frame HasShadow="False" BackgroundColor="White" CornerRadius="10">
                         <Grid>
                             <plugin:Calendar
                                             x:Name="calendrier"
@@ -50,18 +50,35 @@
                                             Day="{Binding Day}"
                                             Month="{Binding Month}"
                                             Year="{Binding Year}"
-                                            Padding="10,0"
                                             DaysTitleColor="Black"
+                                            Padding="10,0"
                                             HorizontalOptions="FillAndExpand"
                                             VerticalOptions="FillAndExpand">
                                 <plugin:Calendar.HeaderSectionTemplate>
                                     <controls:CalendarHeader />
                                 </plugin:Calendar.HeaderSectionTemplate>
+                                <plugin:Calendar.EventTemplate>
+                                    <DataTemplate>
+                                        <StackLayout
+                                            Padding="15,0,0,0"
+                                            HorizontalOptions="FillAndExpand"
+                                            VerticalOptions="FillAndExpand">
+                                            <Label
+                                                FontAttributes="Bold"
+                                                FontSize="Medium"
+                                                TextColor="Black"
+                                                Text="{Binding Heuredébut}" />
+                                            <StackLayout.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding BindingContext.HoraireSelectedCommand, Source={x:Reference weekViewCalendarPage}}" CommandParameter="{Binding .}" />
+                                            </StackLayout.GestureRecognizers>
+                                        </StackLayout>
+                                    </DataTemplate>
+                                </plugin:Calendar.EventTemplate>
                             </plugin:Calendar>
                         </Grid>
                     </Frame>
                 </Grid>
-                <Frame BackgroundColor="white" HasShadow="False"  CornerRadius="10">
+                <!--<Frame BackgroundColor="white" HasShadow="False"  CornerRadius="10">
                     <Grid RowDefinitions="150,5">
                         <CollectionView ItemsSource="{Binding LeProfessionel}" VerticalOptions="Fill">
                             <CollectionView.ItemsLayout>
@@ -83,7 +100,7 @@
                             </CollectionView.ItemTemplate>
                         </CollectionView>
                     </Grid>
-                </Frame>
+                </Frame>-->
             </StackLayout>
             <StackLayout HorizontalOptions="Center" Margin="20,700,20,0">
                 <Button Text="Retour" 

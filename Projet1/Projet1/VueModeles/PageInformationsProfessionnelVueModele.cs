@@ -50,7 +50,7 @@ namespace Projet1.VueModeles
         public void ActionCommandBoutonRetour()
         {
             Professionnel.SuppresionProfessionnelChoisie();
-            Application.Current.MainPage = new PageRechercheVue();
+            Application.Current.MainPage = new NavigationPage(new PageRechercheVue());
         }
         #endregion
     }

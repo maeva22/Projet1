@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Projet1.Vues.PageMapVue"
              Title="Map">
-
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  Command="{Binding BoutonRetour}" Text="Return" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid>
             <BoxView Grid.RowSpan="3">
@@ -18,18 +20,9 @@
                 <SearchBar Placeholder="Rechercher" 
                             BackgroundColor="AliceBlue"/>
             </StackLayout>
-            <StackLayout HorizontalOptions="Center" Margin="0,70,0,0">
+            <StackLayout HorizontalOptions="Center" Margin="20,140,20,0">
                 <Label Text=" Page en cours de construction !"
                        FontSize="56"/>
-            </StackLayout>
-            <StackLayout Grid.Row="2" HorizontalOptions="Center">
-                <Button Text="Retour" 
-                        BackgroundColor="Blue"
-                        TextColor="White"
-                        WidthRequest="250"
-                        HorizontalOptions="Center" 
-                        CornerRadius="23"
-                        Command="{Binding BoutonRetour}"/>
             </StackLayout>
         </Grid>
     </ContentPage.Content>
